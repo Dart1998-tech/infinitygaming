@@ -1,4 +1,4 @@
-
+DROP SCHEMA if exists infinity_gaming;
 
 CREATE DATABASE infinity_gaming;
 use infinity_gaming;
@@ -18,7 +18,7 @@ CREATE TABLE utente (
     username VARCHAR(45) UNIQUE NOT NULL,
     password VARCHAR(45) NOT NULL,
     regdate DATE NOT NULL,
-    fondi FLOAT DEFAULT 0,
+    fondi DOUBLE DEFAULT 0,
     PRIMARY KEY (id)
 );
 
@@ -89,7 +89,7 @@ INSERT INTO genere VALUES (6, 'SPORT');
 -- Inserimento dati in 'piattaforma'
 INSERT INTO piattaforma VALUES (1, 'PC');
 INSERT INTO piattaforma VALUES (2, 'PZ');
-INSERT INTO piattaforma VALUES (3, 'NOINTIENDO');
+INSERT INTO piattaforma VALUES (3, 'NOENTIENDO');
 INSERT INTO piattaforma VALUES (4, 'YBOX');
 
 -- Inserimento dati in 'game' (ordinati cronologicamente)
@@ -315,7 +315,6 @@ INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (25, 1);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (26, 1);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (27, 1);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (28, 1);
-
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (29, 1);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (29, 2);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (29, 3);
@@ -352,3 +351,5 @@ INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (49, 4);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (50, 1);
 
  SELECT id, titolo, software_house FROM game WHERE titolo LIKE '?%';
+ 
+UPDATE utente u SET fondi = fondi + 100 WHERE u.id = 1 ;
