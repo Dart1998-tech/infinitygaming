@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-import org.generationitaly.infinitygaming.entity.OrderItem;
+import org.generationitaly.infinitygaming.entity.OrdineItem;
 import org.generationitaly.infinitygaming.entity.Ordine;
 import org.generationitaly.infinitygaming.entity.Utente;
 import org.generationitaly.infinitygaming.repository.OrderItemRepository;
@@ -94,12 +94,12 @@ public class OrdiniServlet extends HttpServlet {
             
             Ordine ordine = optionalOrdine.get();
             
-            if (!(ordine.getUtenteId().getId() == (utente.getId()))) {
+            if (!(ordine.getId() == (utente.getId()))) {
                 response.sendError(HttpServletResponse.SC_FORBIDDEN, "Non hai il permesso di visualizzare questo ordine");
                 return;
             }
             
-            List<OrderItem> orderItems = orderItemRepository.findByOrder(ordine);
+            List<OrdineItem> orderItems = orderItemRepository.findByOrder(ordine);
             
             request.setAttribute("ordine", ordine);
             request.setAttribute("orderItems", orderItems);

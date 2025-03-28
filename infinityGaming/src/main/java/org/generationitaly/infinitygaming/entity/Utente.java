@@ -1,31 +1,19 @@
 package org.generationitaly.infinitygaming.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-
-/*
--- Tabella 'utente'
-CREATE TABLE utente (
-    id INT(10) NOT NULL AUTO_INCREMENT,
-    nome VARCHAR(45) NOT NULL,
-    cognome VARCHAR(45) NOT NULL,
-    email VARCHAR(65) NOT NULL,
-    username VARCHAR(45) NOT NULL,
-    password VARCHAR(45) NOT NULL,
-    regdate DATE NOT NULL,
-    fondi FLOAT DEFAULT 0,
-    PRIMARY KEY (id)
-);
- * 
- */
 
 @Entity
 @Table(name = "utente")
@@ -57,6 +45,9 @@ public class Utente {
 	@Temporal(TemporalType.DATE)
 	@Column(name = "regdate", nullable = false)
 	private Date regdate;
+	
+	@OneToMany(mappedBy = "utente", fetch = FetchType.EAGER)
+	private List<Ordine> ordini = new ArrayList<>();
 
 	public long getId() {
 		return id;
@@ -120,6 +111,14 @@ public class Utente {
 
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
+	}
+
+	public List<Ordine> getOrdini() {
+		return ordini;
+	}
+
+	public void setOrdini(List<Ordine> ordini) {
+		this.ordini = ordini;
 	}
 
 	@Override

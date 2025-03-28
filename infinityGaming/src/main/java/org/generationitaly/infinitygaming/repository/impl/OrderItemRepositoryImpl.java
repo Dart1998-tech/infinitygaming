@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.generationitaly.infinitygaming.entity.Gioco;
-import org.generationitaly.infinitygaming.entity.OrderItem;
+import org.generationitaly.infinitygaming.entity.OrdineItem;
 import org.generationitaly.infinitygaming.entity.Ordine;
 import org.generationitaly.infinitygaming.repository.GiocoRepository;
 import org.generationitaly.infinitygaming.repository.OrderItemRepository;
@@ -26,7 +26,7 @@ public class OrderItemRepositoryImpl implements OrderItemRepository {
     }
 
     @Override
-    public List<OrderItem> findByOrder(Ordine ordine) {
+    public List<OrdineItem> findByOrder(Ordine ordine) {
 //        List<OrderItem> orderItems = new ArrayList<>();
 //        try (Connection connection = JdbcUtil.getConnection();
 //             PreparedStatement ps = connection.prepareStatement("SELECT * FROM order_items WHERE order_id = ?")) {
@@ -53,7 +53,7 @@ public class OrderItemRepositoryImpl implements OrderItemRepository {
     }
 
     @Override
-    public OrderItem save(OrderItem orderItem) {
+    public OrdineItem save(OrdineItem orderItem) {
 //        if (orderItem.getId() == 0) {
 //            try (Connection connection = JdbcUtil.getConnection();
 //                 PreparedStatement ps = connection.prepareStatement(
@@ -92,7 +92,7 @@ public class OrderItemRepositoryImpl implements OrderItemRepository {
     }
 
     @Override
-    public Optional<OrderItem> findById(Long id) {
+    public Optional<OrdineItem> findById(Long id) {
 //        try (Connection connection = JdbcUtil.getConnection();
 //             PreparedStatement ps = connection.prepareStatement("SELECT * FROM order_items WHERE id = ?")) {
 //            ps.setLong(1, id);
@@ -113,7 +113,7 @@ public class OrderItemRepositoryImpl implements OrderItemRepository {
     }
 
     @Override
-    public Optional<OrderItem> findByOrderAndGioco(Ordine ordine, Gioco gioco) {
+    public Optional<OrdineItem> findByOrderAndGioco(Ordine ordine, Gioco gioco) {
 //        try (Connection connection = JdbcUtil.getConnection();
 //             PreparedStatement ps = connection.prepareStatement(
 //                 "SELECT * FROM order_items WHERE order_id = ? AND gioco_id = ?")) {

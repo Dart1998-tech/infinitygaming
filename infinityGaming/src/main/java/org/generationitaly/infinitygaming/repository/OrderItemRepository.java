@@ -4,18 +4,18 @@ import java.util.List;
 import java.util.Optional;
 
 import org.generationitaly.infinitygaming.entity.Ordine;
-import org.generationitaly.infinitygaming.entity.OrderItem;
+import org.generationitaly.infinitygaming.entity.OrdineItem;
 import org.generationitaly.infinitygaming.entity.Gioco;
 
 public interface OrderItemRepository {
     
 
-    List<OrderItem> findByOrder(Ordine ordine);
+    List<OrdineItem> findByOrder(Ordine ordine);
     
 
-    OrderItem save(OrderItem orderItem);
+    OrdineItem save(OrdineItem orderItem);
 
-    Optional<OrderItem> findById(Long id);
+    Optional<OrdineItem> findById(Long id);
     
-    Optional<OrderItem> findByOrderAndGioco(Ordine ordine, Gioco gioco);
+    Optional<OrdineItem> findByOrderAndGioco(Ordine ordine, Gioco gioco);
 }

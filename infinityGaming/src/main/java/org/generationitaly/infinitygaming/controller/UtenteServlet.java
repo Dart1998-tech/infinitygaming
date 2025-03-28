@@ -20,8 +20,8 @@ public class UtenteServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		Utente utente = (Utente)session.getAttribute("utente");
+		HttpSession session = request.getSession();Utente utente = (Utente)session.getAttribute("utente");
+		
 		if(utente == null) {
 			response.sendRedirect("index.jsp");
 			return;

@@ -6,14 +6,6 @@
 	<persistence-unit transaction-type="RESOURCE_LOCAL"
 		name="persistence">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>org.generationitaly.infinitygaming.entity.Gioco</class>
-		<class>org.generationitaly.infinitygaming.entity.Genere</class>
-		<class>org.generationitaly.infinitygaming.entity.Piattaforma</class>
-		<class>org.generationitaly.infinitygaming.entity.Utente</class>
-		<!--  <class>org.generationitaly.infinitygaming.entity.Cart</class>
-		<class>org.generationitaly.infinitygaming.entity.CartItem</class>
-		<class>org.generationitaly.infinitygaming.entity.Ordine</class>
-		<class>org.generationitaly.infinitygaming.entity.OrderItem</class>-->
 		<properties>
 			<property name="jakarta.persistence.jdbc.driver"
 				value="com.mysql.cj.jdbc.Driver" />

@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <%@ page import="java.util.List" %>
 <%@ page import="org.generationitaly.infinitygaming.entity.*" %>
+<%@ page import="org.generationitaly.infinitygaming.repository.impl.UtenteRepositoryImpl"%>
+<%@ page import="org.generationitaly.infinitygaming.repository.UtenteRepository"%>
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -10,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <%@ include file="navbar.jsp" %> 
@@ -17,8 +20,13 @@
     <section class="container my-5">
         <h1 class="text-center mb-4">I Tuoi Ordini</h1>
         
-        <% 
-        List<Ordine> ordini = (List<Ordine>) request.getAttribute("ordini");
+        <%
+        	/* CREARE SERVLET ORDINI*/
+        	
+//         UtenteRepository utenteRepository = UtenteRepositoryImpl.getInstance();
+//         Utente utente = utenteRepository.findById(1L);
+// 			List<Ordine> ordini = utente.getOrdini();
+        //List<Ordine> ordini = (List<Ordine>) request.getAttribute("ordini");
         
         if (ordini == null || ordini.isEmpty()) {
         %>
@@ -40,10 +48,11 @@
                     <tbody>
                         <% for (Ordine ordine : ordini) { %>
                             <tr>
-                                <td>#<%= ordine.getOrdineId() %></td>
-                                <td><%= new java.util.Date() %></td>
+                                <td>#<%= ordine.getId() %></td>
+                                <td><%= ordine.getDataOrdine() %></td>
+                                <td><%= ordine.getPrezzo() %></td>
                                 <td>
-                                    <a href="<%=request.getContextPath()%>/ordini/dettaglio/<%= ordine.getOrdineId() %>" class="btn btn-sm btn-primary">
+                                    <a href="<%=request.getContextPath()%>/ordini/dettaglio/<%= ordine.getId() %>" class="btn btn-sm btn-primary">
                                         <i class="bi bi-eye"></i> Dettagli
                                     </a>
                                 </td>

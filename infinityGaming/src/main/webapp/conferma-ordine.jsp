@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <%@ page import="java.util.List" %>
 <%@ page import="org.generationitaly.infinitygaming.entity.Ordine" %>
-<%@ page import="org.generationitaly.infinitygaming.entity.OrderItem" %>
+<%@ page import="org.generationitaly.infinitygaming.entity.OrdineItem" %>
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -28,17 +28,17 @@
                             <p>Il tuo ordine è stato ricevuto e verrà elaborato al più presto.</p>
                         </div>
                         
-                        <% 
-                        Ordine ordine = (Ordine) request.getAttribute("ordine");
-                        List<OrderItem> orderItems = (List<OrderItem>) request.getAttribute("orderItems");
-                        
-                        if (ordine != null) {
-                        %>
+                        <%
+                                                Ordine ordine = (Ordine) request.getAttribute("ordine");
+                                                                        List<OrdineItem> orderItems = (List<OrdineItem>) request.getAttribute("orderItems");
+                                                                        
+                                                                        if (ordine != null) {
+                                                %>
                             <div class="mb-4">
                                 <h5>Dettagli dell'ordine</h5>
-                                <p><strong>Numero ordine:</strong> #<%= ordine.getOrdineId() %></p>
-                                <p><strong>Data:</strong> <%= new java.util.Date() %></p>
-                                <p><strong>Totale:</strong> <%= String.format("%.2f €", ordine.getPrezzo()) %></p>
+                                <p><strong>Numero ordine:</strong> #<%=ordine.getOrdineId()%></p>
+                                <p><strong>Data:</strong> <%=new java.util.Date()%></p>
+                                <p><strong>Totale:</strong> <%=String.format("%.2f €", ordine.getPrezzo())%></p>
                             </div>
                             
                             <div class="mb-4">
@@ -52,7 +52,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <% for (OrderItem item : orderItems) { %>
+                                            <%
+                                            for (OrdineItem item : orderItems) {
+                                            %>
                                                 <tr>
                                                     <td><%= item.getGioco().getTitolo() %></td>
                                                     <td><%= String.format("%.2f €", item.getPrezzo()) %></td>

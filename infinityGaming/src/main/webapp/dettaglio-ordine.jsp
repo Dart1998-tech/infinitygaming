@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <%@ page import="java.util.List" %>
 <%@ page import="org.generationitaly.infinitygaming.entity.Ordine" %>
-<%@ page import="org.generationitaly.infinitygaming.entity.OrderItem" %>
+<%@ page import="org.generationitaly.infinitygaming.entity.OrdineItem" %>
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -16,20 +16,22 @@
     <%@ include file="navbar.jsp" %> 
     
     <section class="container my-5">
-        <% 
+        <%
         Ordine ordine = (Ordine) request.getAttribute("ordine");
-        List<OrderItem> orderItems = (List<OrderItem>) request.getAttribute("orderItems");
-        
-        if (ordine == null) {
+                List<OrdineItem> orderItems = (List<OrdineItem>) request.getAttribute("orderItems");
+                
+                if (ordine == null) {
         %>
             <div class="alert alert-danger text-center">
                 <p>Ordine non trovato.</p>
                 <a href="<%=request.getContextPath()%>/ordini" class="btn btn-primary mt-3">Torna ai tuoi ordini</a>
             </div>
-        <% } else { %>
+        <%
+        } else {
+        %>
             <div class="card mb-4">
                 <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                    <h3 class="mb-0">Dettaglio Ordine #<%= ordine.getOrdineId() %></h3>
+                    <h3 class="mb-0">Dettaglio Ordine #<%=ordine.getOrdineId()%></h3>
                     <a href="<%=request.getContextPath()%>/ordini" class="btn btn-light btn-sm">
                         <i class="bi bi-arrow-left"></i> Torna agli ordini
                     </a>
@@ -38,14 +40,14 @@
                     <div class="row mb-4">
                         <div class="col-md-6">
                             <h5>Informazioni Ordine</h5>
-                            <p><strong>Numero ordine:</strong> #<%= ordine.getOrdineId() %></p>
-                            <p><strong>Data:</strong> <%= new java.util.Date() %></p>
-                            <p><strong>Totale:</strong> <%= String.format("%.2f €", ordine.getPrezzo()) %></p>
+                            <p><strong>Numero ordine:</strong> #<%=ordine.getOrdineId()%></p>
+                            <p><strong>Data:</strong> <%=new java.util.Date()%></p>
+                            <p><strong>Totale:</strong> <%=String.format("%.2f €", ordine.getPrezzo())%></p>
                         </div>
                         <div class="col-md-6">
                             <h5>Informazioni Cliente</h5>
-                            <p><strong>Nome:</strong> <%= ordine.getUtenteId().getNome() %> <%= ordine.getUtenteId().getCognome() %></p>
-                            <p><strong>Email:</strong> <%= ordine.getUtenteId().getEmail() %></p>
+                            <p><strong>Nome:</strong> <%=ordine.getUtenteId().getNome()%> <%=ordine.getUtenteId().getCognome()%></p>
+                            <p><strong>Email:</strong> <%=ordine.getUtenteId().getEmail()%></p>
                         </div>
                     </div>
                     
@@ -59,8 +61,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <% if (orderItems != null && !orderItems.isEmpty()) { %>
-                                    <% for (OrderItem item : orderItems) { %>
+                                <%
+                                if (orderItems != null && !orderItems.isEmpty()) {
+                                %>
+                                    <%
+                                    for (OrdineItem item : orderItems) {
+                                    %>
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">

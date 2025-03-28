@@ -1,12 +1,12 @@
-
+DROP SCHEMA if exists infinity_gaming;
 
 CREATE DATABASE infinity_gaming;
 use infinity_gaming;
 
 -- Tabella 'genere' (prerequisito per 'game')
 CREATE TABLE genere(
-    genere_id INT AUTO_INCREMENT PRIMARY KEY,
-    nome_genere VARCHAR(20) NOT NULL
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(20) UNIQUE NOT NULL
 );
 
 -- Tabella 'utente'
@@ -15,19 +15,11 @@ CREATE TABLE utente (
     nome VARCHAR(45) NOT NULL,
     cognome VARCHAR(45) NOT NULL,
     email VARCHAR(65) NOT NULL,
-    username VARCHAR(45) NOT NULL,
+    username VARCHAR(45) UNIQUE NOT NULL,
     password VARCHAR(45) NOT NULL,
     regdate DATE NOT NULL,
-    fondi FLOAT DEFAULT 0,
+    fondi DOUBLE DEFAULT 0,
     PRIMARY KEY (id)
-);
-
--- Tabella 'ordini'
-CREATe TABLE ordini (
-ordine_id int primary key auto_increment NOT NULL,
-prezzo DOUBLE,
-utente_id int not null,
-foreign key(utente_id) references utente(id)
 );
 
 -- Tabella 'game' (richiede 'genere')
@@ -35,28 +27,28 @@ CREATE TABLE game(
     id INT(12) PRIMARY KEY AUTO_INCREMENT,
     titolo VARCHAR(45) NOT NULL,
     software_house VARCHAR(45) NOT NULL,
-    genere_id INT,
-    FOREIGN KEY (genere_id) REFERENCES genere(genere_id),
+    genere_id INT NOT NULL,
     anno INT NOT NULL,
-    prezzo DOUBLE,
+    prezzo DOUBLE NOT NULL,
     immagine VARCHAR(255) NOT NULL,
     recensione TEXT NOT NULL,
-    voto INT NOT NULL
+    voto INT NOT NULL,
+    FOREIGN KEY (genere_id) REFERENCES genere(id)
 );
 
 -- Tabella 'piattaforma'
 CREATE TABLE piattaforma(
-    piattaforma_id INT AUTO_INCREMENT PRIMARY KEY,
-    nome_piattaforma VARCHAR(20) NOT NULL
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(20) UNIQUE NOT NULL
 );
 
 -- Tabella relazione 'game_piattaforma' (richiede 'game' e 'piattaforma')
 CREATE TABLE game_piattaforma (
-    gamepiattaforma_id INT AUTO_INCREMENT PRIMARY KEY,
-    game_id INT,
-    piattaforma_id INT,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    game_id INT NOT NULL,
+    piattaforma_id INT NOT NULL,
     FOREIGN KEY (game_id) REFERENCES game(id),
-    FOREIGN KEY (piattaforma_id) REFERENCES piattaforma(piattaforma_id)
+    FOREIGN KEY (piattaforma_id) REFERENCES piattaforma(id)
 );
 
 
@@ -78,6 +70,26 @@ CREATE TABLE cart_items (
     FOREIGN KEY (game_id) REFERENCES game(id) ON DELETE CASCADE
 );
 
+-- Tabella 'ordine'
+CREATe TABLE ordine (
+	id int primary key auto_increment NOT NULL,
+	prezzo DOUBLE,
+    data_ordine DATE NOT NULL,
+	utente_id int not null,
+	FOREIGN KEY (utente_id) REFERENCES utente(id)
+);
+
+-- Tabella 'ordine_item' (relazione con 'cart' e 'game')
+CREATE TABLE ordine_item (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ordine_id INT NOT NULL,
+    game_id INT NOT NULL,
+    prezzo DOUBLE NOT NULL,
+    game_key VARCHAR(16) UNIQUE NOT NULL,  
+    FOREIGN KEY (ordine_id) REFERENCES ordine(id) ON DELETE CASCADE,
+    FOREIGN KEY (game_id) REFERENCES game(id) ON DELETE CASCADE
+);
+
 -- Inserimento dati in 'genere'
 INSERT INTO genere VALUES (1, 'FPS');
 INSERT INTO genere VALUES (2, 'RPG');
@@ -89,7 +101,7 @@ INSERT INTO genere VALUES (6, 'SPORT');
 -- Inserimento dati in 'piattaforma'
 INSERT INTO piattaforma VALUES (1, 'PC');
 INSERT INTO piattaforma VALUES (2, 'PZ');
-INSERT INTO piattaforma VALUES (3, 'NOINTIENDO');
+INSERT INTO piattaforma VALUES (3, 'NOENTIENDO');
 INSERT INTO piattaforma VALUES (4, 'YBOX');
 
 -- Inserimento dati in 'game' (ordinati cronologicamente)
@@ -323,13 +335,9 @@ INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (30, 1);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (31, 1);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (32, 1);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (33, 1);
-INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (34, 1);
-INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (35, 1);
+INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (34, 2);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (35, 2);
-INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (35, 4);
-INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (36, 1);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (36, 2);
-INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (36, 4);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (37, 1);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (38, 1);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (38, 2);
@@ -355,3 +363,5 @@ INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (49, 4);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (50, 1);
 
  SELECT id, titolo, software_house FROM game WHERE titolo LIKE '?%';
+ 
+UPDATE utente u SET fondi = fondi + 100 WHERE u.id = 1 ;

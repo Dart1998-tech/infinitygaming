@@ -8,7 +8,7 @@ import java.util.Optional;
 
 import org.generationitaly.infinitygaming.entity.Cart;
 import org.generationitaly.infinitygaming.entity.CartItem;
-import org.generationitaly.infinitygaming.entity.OrderItem;
+import org.generationitaly.infinitygaming.entity.OrdineItem;
 import org.generationitaly.infinitygaming.entity.Ordine;
 import org.generationitaly.infinitygaming.entity.Utente;
 import org.generationitaly.infinitygaming.repository.CartItemRepository;
@@ -152,7 +152,7 @@ public class CheckoutServlet extends HttpServlet {
         ordine = ordineRepository.save(ordine);
         
         for (CartItem cartItem : cartItems) {
-            OrderItem orderItem = new OrderItem();
+            OrdineItem orderItem = new OrdineItem();
             orderItem.setOrder(ordine);
             orderItem.setGioco(cartItem.getGioco());
             orderItem.setPrezzo(cartItem.getPrezzo());
@@ -185,7 +185,7 @@ public class CheckoutServlet extends HttpServlet {
         }
         
         Ordine ordine = optionalOrdine.get();
-        List<OrderItem> orderItems = orderItemRepository.findByOrder(ordine);
+        List<OrdineItem> orderItems = orderItemRepository.findByOrder(ordine);
         
         request.setAttribute("ordine", ordine);
         request.setAttribute("orderItems", orderItems);
