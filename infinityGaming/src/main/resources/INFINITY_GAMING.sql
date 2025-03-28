@@ -1,5 +1,4 @@
 DROP SCHEMA if exists infinity_gaming;
-
 CREATE DATABASE infinity_gaming;
 use infinity_gaming;
 
