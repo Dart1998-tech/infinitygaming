@@ -315,6 +315,7 @@ INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (25, 1);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (26, 1);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (27, 1);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (28, 1);
+
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (29, 1);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (29, 2);
 INSERT INTO game_piattaforma (game_id, piattaforma_id) VALUES (29, 3);
