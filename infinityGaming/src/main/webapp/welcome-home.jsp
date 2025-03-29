@@ -45,7 +45,7 @@
 			</div>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<a href="/infinityGaming/gioco?id=30"> <img
+					<a href="/infinityGaming/gioco?id=26"> <img
 						src="images/popular1.jpg" class="d-block w-100"
 						alt="Alien Veggie War">
 					</a>
@@ -57,25 +57,25 @@
 					</a>
 				</div>
 				<div class="carousel-item">
-					<a href="/infinityGaming/gioco?id=31"> <img
+					<a href="/infinityGaming/gioco?id=27"> <img
 						src="images/popular3.jpg" class="d-block w-100"
 						alt="Prince Rescue Simulator">
 					</a>
 				</div>
 				<div class="carousel-item">
-					<a href="/infinityGaming/gioco?id=32"> <img
+					<a href="/infinityGaming/gioco?id=28"> <img
 						src="images/popular4.jpg" class="d-block w-100"
 						alt="BioShockwave Civilis">
 					</a>
 				</div>
 				<div class="carousel-item">
-					<a href="/infinityGaming/gioco?id=33"> <img
+					<a href="/infinityGaming/gioco?id=29"> <img
 						src="images/popular5.jpg" class="d-block w-100"
 						alt="Call of Booty">
 					</a>
 				</div>
 				<div class="carousel-item">
-					<a href="/infinityGaming/gioco?id=34"> <img
+					<a href="/infinityGaming/gioco?id=30"> <img
 						src="images/popular6.jpg" class="d-block w-100"
 						alt="Pirate Pancake Planver">
 					</a>
@@ -135,25 +135,25 @@
 		<h2 class="text-center neon-white-blue">Giochi Bestseller</h2>
 		<div class="row">
 			<div class="col-md-4">
-				<a href="/infinityGaming/gioco?id=19"> <img
+				<a href="/infinityGaming/gioco?id=18"> <img
 					src="images/bestseller1.jpg" class="img-fluid rounded mb-4"
 					alt="Neon Horizon">
 				</a>
 			</div>
 			<div class="col-md-4">
-				<a href="/infinityGaming/gioco?id=21"> <img
+				<a href="/infinityGaming/gioco?id=20"> <img
 					src="images/bestseller2.jpg" class="img-fluid rounded mb-4"
 					alt="A The Utchìng">
 				</a>
 			</div>
 			<div class="col-md-4">
-				<a href="/infinityGaming/gioco?id=20"> <img
+				<a href="/infinityGaming/gioco?id=19"> <img
 					src="images/bestseller3.jpg" class="img-fluid rounded mb-4"
 					alt="The Lame Lame of">
 				</a>
 			</div>
 			<div class="col-md-4">
-				<a href="/infinityGaming/gioco?id=25"> <img
+				<a href="/infinityGaming/gioco?id=2"> <img
 					src="images/bestseller4.jpg" class="img-fluid rounded mb-4"
 					alt="FortCrash">
 				</a>
@@ -165,7 +165,7 @@
 				</a>
 			</div>
 			<div class="col-md-4">
-				<a href="/infinityGaming/gioco?id=22"> <img
+				<a href="/infinityGaming/gioco?id=21"> <img
 					src="images/bestseller6.jpg" class="img-fluid rounded mb-4"
 					alt="Don Matteo">
 				</a>
@@ -182,31 +182,31 @@
 				</a>
 			</div>
 			<div class="col-md-4">
-				<a href="/infinityGaming/gioco?id=41"> <img
+				<a href="/infinityGaming/gioco?id=37"> <img
 					src="images/recommended2.jpg" class="img-fluid rounded mb-4"
 					alt="Among SUS">
 				</a>
 			</div>
 			<div class="col-md-4">
-				<a href="/infinityGaming/gioco?id=42"> <img
+				<a href="/infinityGaming/gioco?id=38"> <img
 					src="images/recommended3.jpg" class="img-fluid rounded mb-4"
 					alt="Lara">
 				</a>
 			</div>
 			<div class="col-md-4">
-				<a href="/infinityGaming/gioco?id=43"> <img
+				<a href="/infinityGaming/gioco?id=39"> <img
 					src="images/recommended4.jpg" class="img-fluid rounded mb-4"
 					alt="Apex Respawn">
 				</a>
 			</div>
 			<div class="col-md-4">
-				<a href="/infinityGaming/gioco?id=44"> <img
+				<a href="/infinityGaming/gioco?id=40"> <img
 					src="images/recommended5.jpg" class="img-fluid rounded mb-4"
 					alt="Among Farts">
 				</a>
 			</div>
 			<div class="col-md-4">
-				<a href="/infinityGaming/gioco?id=45"> <img
+				<a href="/infinityGaming/gioco?id=41"> <img
 					src="images/recommended6.jpg" class="img-fluid rounded mb-4"
 					alt="The Legend of Elda: Losteyes">
 				</a>
@@ -218,13 +218,13 @@
 		<h2 class="text-center neon-white-blue">Giochi Recensiti</h2>
 		<div class="row">
 			<div class="col-md-4">
-				<a href="/infinityGaming/gioco?id=48"> <img
+				<a href="/infinityGaming/gioco?id=44"> <img
 					src="images/reviewed1.jpg" class="img-fluid rounded mb-4"
 					alt="Candy Kart">
 				</a>
 			</div>
 			<div class="col-md-4">
-				<a href="/infinityGaming/gioco?id=49"> <img
+				<a href="/infinityGaming/gioco?id=45"> <img
 					src="images/reviewed2.jpg" class="img-fluid rounded mb-4"
 					alt="Cooking Mayhem">
 				</a>
