@@ -204,24 +204,8 @@
 				        <p><strong>Voto:</strong> <%= voto %>/10</p>
 				        <div class="bottone">
     						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#grazieModal">
-        						Compra ora
+        						Aggiungi al carrello
     						</button>
-						</div>
-						<div class="modal fade" id="grazieModal" tabindex="-1" aria-labelledby="grazieModalLabel" aria-hidden="true">
-						    <div class="modal-dialog">
-						        <div class="modal-content">
-						            <div class="modal-header" style="background-color: #f8f9fa; color: #000;">
-						                <h5 class="modal-title" id="grazieModalLabel" style="color: #000;">Grazie per il tuo acquisto!</h5>
-						                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
-						            </div>
-						            <div class="modal-body" style="color: #000; background-color: #f8f9fa;">
-						                Il tuo ordine è stato confermato con successo. Ti invieremo presto una conferma via email.
-						            </div>
-						            <div class="modal-footer" style="background-color: #f8f9fa;">
-						                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-						            </div>
-						        </div>
-						    </div>
 						</div>
                     </div>
                 </div>
