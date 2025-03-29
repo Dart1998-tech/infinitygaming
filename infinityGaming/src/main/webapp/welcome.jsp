@@ -62,7 +62,7 @@
 		<div class="wrapper">
 			<p>Registrazione Effettuata!</p>
 			<br>
-			<a href="index.jsp">Log in</a>
+			<a href="/infinityGaming/login">Log in</a>
 		</div>
 	</body>
 </html>
