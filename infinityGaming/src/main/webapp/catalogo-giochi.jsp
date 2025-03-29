@@ -39,41 +39,56 @@
                 <div class="col-md-4">
                     <h5 class="mb-3">Generi:</h5>
                     <div class="d-flex flex-wrap gap-2">
-                        <button class="btn btn-outline-light filter-btn"
+                    
+                    	<input type="checkbox" class="btn-check" id="btn-check-tutti" autocomplete="off">
+						<label class="btn btn-outline-light filter-btn" for="btn-check-tutti" onclick="toggleFiltro('genere', 'tutti')">Tutti</label>
+
+						<input type="checkbox" class="btn-check" id="btn-check-fps" autocomplete="off">
+						<label class="btn btn-outline-light filter-btn" for="btn-check-fps" onclick="toggleFiltro('genere', '1')">FPS</label>
+						
+						<input type="checkbox" class="btn-check" id="btn-check-rpg" autocomplete="off">
+						<label class="btn btn-outline-light filter-btn" for="btn-check-rpg" onclick="toggleFiltro('genere', '2')">RPG</label>
+						
+						<input type="checkbox" class="btn-check" id="btn-check-action" autocomplete="off">
+						<label class="btn btn-outline-light filter-btn" for="btn-check-action" onclick="toggleFiltro('genere', '3')">Action</label>
+						
+						<input type="checkbox" class="btn-check" id="btn-check-platform" autocomplete="off">
+						<label class="btn btn-outline-light filter-btn" for="btn-check-platform" onclick="toggleFiltro('genere', '4')">Platform</label>
+						
+						<input type="checkbox" class="btn-check" id="btn-check-moba" autocomplete="off">
+						<label class="btn btn-outline-light filter-btn" for="btn-check-moba" onclick="toggleFiltro('genere', '5')">MOBA</label>
+						
+						<input type="checkbox" class="btn-check" id="btn-check-sport" autocomplete="off">
+						<label class="btn btn-outline-light filter-btn" for="btn-check-sport" onclick="toggleFiltro('genere', '6')">Sport</label>
+						
+						<button class="btn btn-outline-light filter-btn"
                             onclick="toggleFiltro('genere', 'tutti')">Tutti</button>
-                        <button class="btn btn-outline-light filter-btn"
-                            onclick="toggleFiltro('genere', '1')">FPS</button>
-                        <button class="btn btn-outline-light filter-btn"
-                            onclick="toggleFiltro('genere', '2')">RPG</button>
-                        <button class="btn btn-outline-light filter-btn"
-                            onclick="toggleFiltro('genere', '3')">Action</button>
-                        <button class="btn btn-outline-light filter-btn"
-                            onclick="toggleFiltro('genere', '4')">Platform</button>
-                        <button class="btn btn-outline-light filter-btn"
-                            onclick="toggleFiltro('genere', '5')">MOBA</button>
-                        <button class="btn btn-outline-light filter-btn"
-                            onclick="toggleFiltro('genere', '6')">Sport</button>
+						
                     </div>
                 </div>
                 <div class="col-md-4">
                     <h5 class="mb-3">Prezzo:</h5>
                     <div class="d-flex flex-wrap gap-2">
-                        <button class="btn btn-outline-light price-btn"
-                            onclick="toggleFiltro('prezzo', '0-20')">€0 - €20</button>
-                        <button class="btn btn-outline-light price-btn"
-                            onclick="toggleFiltro('prezzo', '20-50')">€20 - €50</button>
-                        <button class="btn btn-outline-light price-btn"
-                            onclick="toggleFiltro('prezzo', '50-100')">€50 - €100</button>
+                    	<input type="checkbox" class="btn-check" id="price-btn0-20" autocomplete="off">
+                    	<label class="btn btn-outline-light filter-btn" for="price-btn0-20" onclick="toggleFiltro('prezzo', '0-20')">€0 - €20</label>
+                    	
+                    	<input type="checkbox" class="btn-check" id="price-btn20-50" autocomplete="off">
+                    	<label class="btn btn-outline-light filter-btn" for="price-btn20-50" onclick="toggleFiltro('prezzo', '20-50')">€20 - €50</label>
+                    	
+                    	<input type="checkbox" class="btn-check" id="price-btn50-100" autocomplete="off">
+                    	<label class="btn btn-outline-light filter-btn" for="price-btn50-100" onclick="toggleFiltro('prezzo', '50-100')">€50 - €100</label>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <h5 class="mb-3">Ordina per:</h5>
                     <div class="d-flex flex-wrap gap-2">
-                        <button class="btn btn-outline-light sort-btn"
-                            onclick="ordinaPerPrezzo('crescente')">Prezzo Crescente</button>
-                        <button class="btn btn-outline-light sort-btn"
-                            onclick="ordinaPerPrezzo('decrescente')">Prezzo
-                            Decrescente</button>
+                    
+                    	<input type="checkbox" class="btn-check" id="sort-cresc" autocomplete="off">
+                    	<label class="btn btn-outline-light filter-btn" for="sort-cresc" onclick="ordinaPerPrezzo('crescente')">Prezzo Crescente</label>
+                    	
+                    	<input type="checkbox" class="btn-check" id="sort-desc" autocomplete="off">
+                    	<label class="btn btn-outline-light filter-btn" for="sort-desc" onclick="ordinaPerPrezzo('decrescente')">Prezzo
+                        Decrescente</label>
                     </div>
                 </div>
             </div>
