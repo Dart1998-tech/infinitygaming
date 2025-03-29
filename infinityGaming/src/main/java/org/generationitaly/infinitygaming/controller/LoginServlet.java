@@ -6,6 +6,7 @@ import org.generationitaly.infinitygaming.entity.Utente;
 import org.generationitaly.infinitygaming.repository.UtenteRepository;
 import org.generationitaly.infinitygaming.repository.impl.UtenteRepositoryImpl;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,9 +19,10 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UtenteRepository utenteRepository = UtenteRepositoryImpl.getInstance();
 
-	public LoginServlet() {
-		super();
-		System.out.println("constructor 'LoginServlet()' invoked!");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	@Override

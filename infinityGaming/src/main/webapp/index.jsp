@@ -137,10 +137,10 @@
 				</div>
 				<br>
 				<br>
-				<div class="new-user">
-					<p>Nuovo utente?<a href="register.jsp">Registrati</a></p>
-				</div> 
         </form>
+        <div class="new-user">
+					<p>Nuovo utente?<a href="/infinityGaming/registrazione">Registrati</a></p>
+				</div> 
     </div>
     </body>
 </html>

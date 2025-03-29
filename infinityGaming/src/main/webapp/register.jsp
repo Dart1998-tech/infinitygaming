@@ -120,7 +120,6 @@
 	<div class="wrapper">
 		<form method="post" action="registrazione">
 			<h1>Registrati</h1>
-			
 			<div class="input-box">
 				<input type="text" name="firstName" value="" placeholder="Nome"/>
 			</div>
@@ -140,7 +139,6 @@
 			<div class="input-box">
 				<input type="password" name="password" value="" placeholder="Password"/>
 			</div>
-			
 			<div class="login-reset">
 				<input type="submit" value="Registrati" />
 				<br>
@@ -149,7 +147,7 @@
 			<br>
 			<br>
 			<div class="new-user">
-				<p>Sei già registrato? <a href="index.jsp">Login</a></p>
+				<p>Sei già registrato? <a href="/infinityGaming/login">Login</a></p>
 			</div>
 		</form>
 	</div>
