@@ -59,9 +59,9 @@
 	<body>
 	<img class="img" src="./images/logo.png" alt="Infinity Logo">
 		<div class="wrapper">
-			<p>Password Errata!</p>
+			<p>Credenziali Errate!</p>
 			<br>
-			<a href="index.jsp">Try again</a>
+			<a href="login">Riprova</a>
 		</div>
 	</body>
 </html>

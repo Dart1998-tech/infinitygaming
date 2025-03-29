@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");
 			requestDispatcher.forward(request, response);
 			*/
-			response.sendRedirect("index.jsp?errore=Credenziali errate");
+			response.sendRedirect("login-error.jsp");
 		}
 	}
 

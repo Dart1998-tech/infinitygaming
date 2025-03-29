@@ -86,21 +86,21 @@ a:hover {
 	animation: flicker 1.5s infinite alternate;
 }
 
-.nav-item .nav-link[href="/infinityGaming/pages/playstation.jsp"]:hover{
+.nav-item .nav-link[href="/infinityGaming/catalogo?piattaforma=PZ"]:hover{
 	color: white;
 	text-shadow: 0 0 2px #fff, 0 0 5px #08f, 0 0 10px #08f, 0 0 20px #08f;
 	font-weight: bold;
 	animation: flicker 1.5s infinite alternate;
 }
 
-.nav-item .nav-link[href="/infinityGaming/pages/xboxN.jsp"]:hover{
+.nav-item .nav-link[href="/infinityGaming/catalogo?piattaforma=YBOX"]:hover{
 	color: white;
 	text-shadow: 0 0 2px #fff, 0 0 5px #0f8, 0 0 10px #0f8, 0 0 20px #0f8;
 	font-weight: bold;
 	animation: flicker 1.5s infinite alternate;
 }
 
-.nav-item .nav-link[href="/infinityGaming/pages/NoEntiendo.jsp"]:hover{
+.nav-item .nav-link[href="/infinityGaming/catalogo?piattaforma=NOENTIENDO"]:hover{
 	color: white;
 	text-shadow: 0 0 2px #fff, 0 0 5px #f00, 0 0 10px #f00, 0 0 20px #f00;
 	font-weight: bold;
