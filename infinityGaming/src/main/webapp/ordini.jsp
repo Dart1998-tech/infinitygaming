@@ -21,14 +21,19 @@
         <h1 class="text-center mb-4">I Tuoi Ordini</h1>
         
         <%
-        	/* CREARE SERVLET ORDINI*/
-        	
-//         UtenteRepository utenteRepository = UtenteRepositoryImpl.getInstance();
-//         Utente utente = utenteRepository.findById(1L);
-// 			List<Ordine> ordini = utente.getOrdini();
-        //List<Ordine> ordini = (List<Ordine>) request.getAttribute("ordini");
         
-        if (ordini == null || ordini.isEmpty()) {
+       	UtenteRepository utenteRepository = UtenteRepositoryImpl.getInstance();
+        
+        Utente utente = utenteRepository.findById(1L);
+		List<Ordine> ordini = utente.getOrdini();
+		for(Ordine ordine : ordini) {
+			System.out.println(ordine);
+			for(OrdineItem item : ordine.getItems()) {
+				System.out.println(item);
+			}
+		}
+        
+        if (ordini == null) {
         %>
             <div class="alert alert-info text-center">
                 <p>Non hai ancora effettuato ordini.</p>
@@ -49,13 +54,9 @@
                         <% for (Ordine ordine : ordini) { %>
                             <tr>
                                 <td>#<%= ordine.getId() %></td>
-                                <td><%= ordine.getDataOrdine() %></td>
+                                <td><%=  new java.util.Date()  %></td>
                                 <td><%= ordine.getPrezzo() %></td>
-                                <td>
-                                    <a href="<%=request.getContextPath()%>/ordini/dettaglio/<%= ordine.getId() %>" class="btn btn-sm btn-primary">
-                                        <i class="bi bi-eye"></i> Dettagli
-                                    </a>
-                                </td>
+                                <td></td>
                             </tr>
                         <% } %>
                     </tbody>
