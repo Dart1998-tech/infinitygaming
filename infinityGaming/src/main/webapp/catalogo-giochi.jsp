@@ -61,9 +61,6 @@
 						<input type="checkbox" class="btn-check" id="btn-check-sport" autocomplete="off">
 						<label class="btn btn-outline-light filter-btn" for="btn-check-sport" onclick="toggleFiltro('genere', '6')">Sport</label>
 						
-						<button class="btn btn-outline-light filter-btn"
-                            onclick="toggleFiltro('genere', 'tutti')">Tutti</button>
-						
                     </div>
                 </div>
                 <div class="col-md-4">
