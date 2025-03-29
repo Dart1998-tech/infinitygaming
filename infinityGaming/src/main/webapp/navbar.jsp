@@ -1,5 +1,5 @@
 <nav class="navbar <%= request.getAttribute("currentPage") %>">
-    <a href="/infinityGaming/welcome-home.jsp" class="navbar-brand">
+    <a href="/infinityGaming/home" class="navbar-brand">
         <img src="/infinityGaming/images/logo.png" alt="Logo Infinity Gaming" class="logo">
     </a>
 
@@ -14,7 +14,7 @@
     </div>
 
     
-    <form class="d-flex search-bar" action="/infinityGaming/catalogo" method="GET" aria-label="Search bar">
+    <form class="d-flex search-bar" action="/infinityGaming/catalogo" method="get" aria-label="Search bar">
         <input class="form-control me-2" type="search" name="query" placeholder="Cerca giochi" aria-label="Cerca">
         <button class="btn btn-outline-light" type="submit">Cerca</button>
     </form>

@@ -61,7 +61,7 @@ body {
 	color: #fff;
 }
 
-.fondi input {
+.fondi button {
 	border: none;
 	accent-color: #fff;
 	margin-right: 3px;
@@ -69,7 +69,7 @@ body {
 	margin: 2px;
 }
 
-.wrapper .fondi input {
+.wrapper .fondi button {
 	width: 100%;
 	heigth: 100%;
 	background: #fff;
@@ -84,7 +84,7 @@ body {
 	margin-down: 5px;
 }
 
-.wrapper .fondi input:hover {
+.wrapper .fondi button:hover {
 	background: #adaaaa;
 	color: #fff;
 }
@@ -124,15 +124,19 @@ body {
 </style>
 </head>
 <body>
-	<% 
-		Utente utente = (Utente)session.getAttribute("utente");
-		%>
-<%-- 	 <%@ include file="navbar.jsp"%> --%>
-	<form action="update-fondi" method="post">
-		<img class="img" src="./images/logo.png" alt="Infinity Logo">
-		<div class="wrapper">
+	<%
+	Utente utente = (Utente) session.getAttribute("utente");
+	%>
+	<%-- 	 <%@ include file="navbar.jsp"%> --%>
+	<div class="wrapper">
+		<form action="update-fondi" method="post">
+			<img class="img" src="./images/logo.png" alt="Infinity Logo">
 			<h1>Aggiungi Fondi</h1>
-			<p>Fondi attuali: <%=utente.getFondi() %> €</p>
+			<p>
+				Fondi attuali:
+				<%=utente.getFondi()%>
+				€
+			</p>
 			<div class="input-box">
 				<input id="fondi" type="text" name="fondi" value="0" />
 			</div>
@@ -142,20 +146,25 @@ body {
 				<button onclick="addFondi(event, 200)">+200€</button>
 			</div>
 			<br>
+			<br>
 			<div class="aggiungi">
 				<input type="submit" value="Aggiungi" />
 			</div>
-		</div>
-	</form>
-<script type="text/javascript">
-	
-	function addFondi(event, fondi){
-		event.preventDefault();
-		var elementFondi = document.getElementById("fondi");
-		var newFondi = parseFloat(elementFondi.value) + fondi;
-		elementFondi.value = newFondi;
-	}
-
-</script>
+		</form>
+		<br>
+		<form action="utente" method="get">
+			<div class="aggiungi">
+				<input type="submit" value="indietro" />
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript">
+		function addFondi(event, fondi) {
+			event.preventDefault();
+			var elementFondi = document.getElementById("fondi");
+			var newFondi = parseFloat(elementFondi.value) + fondi;
+			elementFondi.value = newFondi;
+		}
+	</script>
 </body>
 </html>

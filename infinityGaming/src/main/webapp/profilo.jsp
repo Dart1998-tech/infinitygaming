@@ -23,85 +23,74 @@
 
 	<%@ include file="navbar.jsp"%>
 
-<form action="utente" method="get">
+	<form action="utente" method="get">
+		<section class="container my-5">
+			<h1 class="text-center mb-4">Profilo Utente</h1>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card text-center">
+						<img src="./images/man.png" alt="Foto Profilo"
+							class="card-img-top rounded-circle p-4">
+						<div class="card-body">
+							<h4 class="card-title"><%=utente.getUsername()%></h4>
+							<hr>
+							<p style="color: #fff !important">
+								Livello: <strong style="color: rgba(51, 129, 255, 1) !important"><%=count%></strong>
+							</p>
+							<p style="color: #fff !important">
+								Membro dal: <strong
+									style="color: rgba(51, 129, 255, 1) !important"><%=formattedRegDate%></strong>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="card">
+						<div class="card-body">
+							<h2 class="card-title">Panoramica</h2>
+							<hr>
+							<div class="panoramica-item">
+								<span class="label" style="color: #fff !important">Amici:</span>
+								<span class="value">0</span>
+							</div>
+							<div class="panoramica-item">
+								<span class="label" style="color: #fff !important">Recensioni:</span>
+								<span class="value">0</span>
+							</div>
+							<div class="panoramica-item">
+								<span class="label" style="color: #fff !important">Wishlist:</span>
+								<span class="value">0</span>
+							</div>
+							<div class="panoramica-item">
+								<span class="label" style="color: #fff !important">Giochi:</span>
+								<span class="value">19</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</form>
+
+
 	<section class="container my-5">
-		<h1 class="text-center mb-4">Profilo Utente</h1>
-
-		<!-- * SEZIONE DETTAGLI PROFILO * -->
-		<div class="row">
-			<div class="col-md-4">
-				<div class="card text-center">
-					<img src="./images/man.png" alt="Foto Profilo"
-						class="card-img-top rounded-circle p-4">
-					<div class="card-body">
-						<h4 class="card-title"><%=utente.getUsername()%></h4>
-						<!-- NOME UTENTE -->
-						<hr>
-						<p style="color: #fff !important">
-							Livello: <strong style="color: rgba(51, 129, 255, 1) !important"><%=count%></strong>
-						</p>
-						<!-- LIVELLO -->
-						<p style="color: #fff !important">
-							Membro dal: <strong
-								style="color: rgba(51, 129, 255, 1) !important"><%=formattedRegDate%></strong>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-8">
-				<div class="card">
-					<div class="card-body">
-						<h2 class="card-title">Panoramica</h2>
-						<hr>
-						<div class="panoramica-item">
-							<span class="label" style="color: #fff !important">Amici:</span>
-							<span class="value">0</span>
-						</div>
-						<div class="panoramica-item">
-							<span class="label" style="color: #fff !important">Recensioni:</span>
-							<span class="value">0</span>
-						</div>
-						<div class="panoramica-item">
-							<span class="label" style="color: #fff !important">Wishlist:</span>
-							<span class="value">0</span>
-						</div>
-						<div class="panoramica-item">
-							<span class="label" style="color: #fff !important">Giochi:</span>
-							<span class="value">19</span>
-						</div>
-					</div>
-				</div>
+		<div class="card my-5">
+			<div class="card-body">
+				<h2 class="card-title">Portafoglio</h2>
+				<hr>
+				<br>
+				<p style="color: #fff !important">
+					Saldo: <strong style="color: rgba(51, 129, 255, 1) !important"><%=utente.getFondi()%>
+						€</strong>
+				</p>
+				<form action="update-fondi" method="get">
+					<button type="submit" class="btn btn-outline-light ms-2"
+						aria-label="update-fondi">Aggiungi fondi</button>
+				</form>
 			</div>
 		</div>
 
-		<!-- * SEZIONE PORTAFOGLIO * -->
-		<div class="row my-5">
-			<div class="col-md-6">
-				<div class="card text-center">
-					<div class="card-body">
-						<h2 class="card-title">Portafoglio</h2>
-						<hr>
-						<br>
-						<p style="color: #fff !important">
-							Saldo: <strong style="color: rgba(51, 129, 255, 1) !important"><%= utente.getFondi() %> €</strong>
-						</p>
-					</div>
-				</div>
-			</div>
-<!-- 			<div class="col-md-6"> -->
-<!-- 				<div class="card text-center"> -->
-<!-- 					<div class="card-body"> -->
-<!-- 						<h2 class="card-title">Risparmi totali</h2> -->
-<!-- 						<hr> -->
-<!-- 						<p> -->
-<!-- 							<strong style="color: rgba(51, 129, 255, 1) !important">332.27€</strong> -->
-<!-- 						</p> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-		</div>
-
-		<!-- * SEZIONE OBIETTIVI * -->
 		<div class="card my-5">
 			<div class="card-body">
 				<h2>Ultimi Obiettivi</h2>
@@ -115,7 +104,6 @@
 			</div>
 		</div>
 
-		<!-- * SEZIONE WISHLIST * -->
 		<div class="card my-5">
 			<div class="card-body">
 				<h2>Wishlist Giochi</h2>
@@ -125,7 +113,6 @@
 			</div>
 		</div>
 
-		<!-- * SEZIONE LINK AFFILIAZIONE * -->
 		<div class="card my-5">
 			<div class="card-body">
 				<h2>Link Affiliazione</h2>
@@ -136,11 +123,10 @@
 			</div>
 		</div>
 	</section>
-</form>
-	
+
+
 
 	<%@ include file="footer.jsp"%>
-	<!-- INCLUDE IL FOOTER -->
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
