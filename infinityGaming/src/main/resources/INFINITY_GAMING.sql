@@ -1,4 +1,5 @@
 DROP SCHEMA if exists infinity_gaming;
+
 CREATE DATABASE infinity_gaming;
 use infinity_gaming;
 
@@ -19,14 +20,6 @@ CREATE TABLE utente (
     regdate DATE NOT NULL,
     fondi DOUBLE DEFAULT 0,
     PRIMARY KEY (id)
-);
-
--- Tabella 'ordini'
-CREATe TABLE ordini (
-ordine_id int primary key auto_increment NOT NULL,
-prezzo DOUBLE,
-utente_id int not null,
-foreign key(utente_id) references utente(id)
 );
 
 -- Tabella 'game' (richiede 'genere')
@@ -64,17 +57,37 @@ CREATE TABLE game_piattaforma (
 CREATE TABLE cart (
     id INT AUTO_INCREMENT PRIMARY KEY,
     utente_id INT not NULL,
+    tot_prezzo DOUBLE NOT NULL,
     FOREIGN KEY (utente_id) REFERENCES utente(id)
 );
 
 -- Tabella 'cart_items' (relazione con 'cart' e 'game')
-CREATE TABLE cart_items (
+CREATE TABLE cart_item (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cart_id INT NOT NULL,
     game_id INT NOT NULL,
+    FOREIGN KEY (cart_id) REFERENCES cart(id),
+    FOREIGN KEY (game_id) REFERENCES game(id)
+);
+
+-- Tabella 'ordine'
+CREATe TABLE ordine (
+	id int primary key auto_increment NOT NULL,
+	prezzo DOUBLE,
+    data_ordine DATE NOT NULL,
+	utente_id int not null,
+	FOREIGN KEY (utente_id) REFERENCES utente(id)
+);
+
+-- Tabella 'ordine_item' (relazione con 'cart' e 'game')
+CREATE TABLE ordine_item (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ordine_id INT NOT NULL,
+    game_id INT NOT NULL,
     prezzo DOUBLE NOT NULL,
-    FOREIGN KEY (cart_id) REFERENCES cart(id) ON DELETE CASCADE,
-    FOREIGN KEY (game_id) REFERENCES game(id) ON DELETE CASCADE
+    game_key VARCHAR(16) UNIQUE NOT NULL,  
+    FOREIGN KEY (ordine_id) REFERENCES ordine(id),
+    FOREIGN KEY (game_id) REFERENCES game(id)
 );
 
 -- Inserimento dati in 'genere'
