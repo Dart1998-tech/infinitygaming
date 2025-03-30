@@ -23,27 +23,13 @@ import jakarta.servlet.http.HttpSession;
 public class OrdiniServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
-    private OrdineRepository ordineRepository;
-    private OrderItemRepository orderItemRepository;
-    
-    public OrdiniServlet() {
-        super();
-        ordineRepository = OrdineRepositoryImpl.getInstance();
-        orderItemRepository = OrderItemRepositoryImpl.getInstance();
-    }
+    private OrdineRepository ordineRepository = OrdineRepositoryImpl.getInstance();
+    private OrderItemRepository orderItemRepository= OrderItemRepositoryImpl.getInstance();
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
-        String pathInfo = request.getPathInfo();
-        
-        if (pathInfo == null || pathInfo.equals("/")) {
-            showOrderList(request, response);
-        } else if (pathInfo.startsWith("/dettaglio/")) {
-            showOrderDetails(request, response);
-        } else {
-            response.sendError(HttpServletResponse.SC_NOT_FOUND);
-        }
+       
     }
 }
     

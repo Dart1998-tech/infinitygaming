@@ -22,8 +22,8 @@
         
         <%
       //  Utente utente = utenteRepository.findByUsername("username");
-      Utente utente = (Utente) session.getAttribute("utente");
-	  List<Ordine> ordini = utente.getOrdini();  
+     // Utente utente = (Utente) session.getAttribute("utente");
+	  //List<Ordine> ordini = utente.getOrdini();  
         if (ordini == null) {
         %>
             <div class="alert alert-info text-center">

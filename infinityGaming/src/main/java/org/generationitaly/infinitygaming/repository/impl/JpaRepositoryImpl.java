@@ -2,6 +2,7 @@ package org.generationitaly.infinitygaming.repository.impl;
 
 import java.util.List;
 
+import org.generationitaly.infinitygaming.entity.Ordine;
 import org.generationitaly.infinitygaming.repository.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
