@@ -1,49 +1,44 @@
-/* Stile Generale */
-*{
+* {
 	font-family: "Poppins", sans-serif;
 }
 
 body {
-	background-image: url("./images/Background.jpg"); 
-	color: #ffffff; 
+	background-image: url("./images/Background.jpg");
+	color: #ffffff;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	background-image: url("./images/Background.jpg"); /* Sfondo comune */
-	color: #ffffff; /* Colore del testo comune */
+	background-image: url("./images/Background.jpg");
+	color: #ffffff;
 	font-family: 'Arial', sans-serif;
 	margin: 0;
 	padding: 0;
 }
 
-main{
-	flex:1;
+main {
+	flex: 1;
 }
 
 .carousel-item img {
 	width: 30vw !important;
-	height: auto !important; 
+	height: auto !important;
 	display: block;
-	margin: 0 auto; 
+	margin: 0 auto;
 }
 
 img {
-    transition: transform 0.3s ease-in-out; 
-    cursor: pointer; 
+	transition: transform 0.3s ease-in-out;
+	cursor: pointer;
 }
 
 img:hover {
-    transform: scale(1.1); 
+	transform: scale(1.1);
 }
 
-
-/* Intestazioni e Link */
 h1, h2, h3, h4, h5, h6, p, a {
 	color: #ffffff;
-	text-shadow: -1px -1px 0 #000,  
-                 1px -1px 0 #000,  
-                 -1px 1px 0 #000,  
-                 1px 1px 0 #000;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px
+		0 #000;
 }
 
 a {
@@ -51,56 +46,55 @@ a {
 }
 
 a:hover {
-	color: #00aaff; 
+	color: #00aaff;
 }
 
-/* Navbar Generale */
 .navbar {
 	height: 100px;
-	background-color: rgba(14, 23, 46, 0.7); 
+	background-color: rgba(14, 23, 46, 0.7);
 	padding: 0 20px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	font-size: 1.5rem;
-	overflow: hidden; 
-    box-sizing: border-box;
-    width: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+	width: 100%;
 }
 
 .navbar .nav-link {
 	line-height: 100px;
 	padding: 0 15px;
 	color: white;
-	 white-space: nowrap;
+	white-space: nowrap;
 }
-/*
-.navbar .nav-link:hover {
-	color: #00aaff;
-}*/
 
-.nav-item:first-child .nav-link:hover{
+.nav-item:first-child .nav-link:hover {
 	color: white;
-	text-shadow: 0 0 2px #fff, 0 0 5px #ffa500, 0 0 10px #ffa500, 0 0 20px #ffa500;
+	text-shadow: 0 0 2px #fff, 0 0 5px #ffa500, 0 0 10px #ffa500, 0 0 20px
+		#ffa500;
 	font-weight: bold;
 	animation: flicker 1.5s infinite alternate;
 }
 
-.nav-item .nav-link[href="/infinityGaming/catalogo?piattaforma=PZ"]:hover{
+.nav-item .nav-link[href="/infinityGaming/catalogo?piattaforma=PZ"]:hover
+	{
 	color: white;
 	text-shadow: 0 0 2px #fff, 0 0 5px #08f, 0 0 10px #08f, 0 0 20px #08f;
 	font-weight: bold;
 	animation: flicker 1.5s infinite alternate;
 }
 
-.nav-item .nav-link[href="/infinityGaming/catalogo?piattaforma=YBOX"]:hover{
+.nav-item .nav-link[href="/infinityGaming/catalogo?piattaforma=YBOX"]:hover
+	{
 	color: white;
 	text-shadow: 0 0 2px #fff, 0 0 5px #0f8, 0 0 10px #0f8, 0 0 20px #0f8;
 	font-weight: bold;
 	animation: flicker 1.5s infinite alternate;
 }
 
-.nav-item .nav-link[href="/infinityGaming/catalogo?piattaforma=NOENTIENDO"]:hover{
+.nav-item .nav-link[href="/infinityGaming/catalogo?piattaforma=NOENTIENDO"]:hover
+	{
 	color: white;
 	text-shadow: 0 0 2px #fff, 0 0 5px #f00, 0 0 10px #f00, 0 0 20px #f00;
 	font-weight: bold;
@@ -124,7 +118,7 @@ a:hover {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-    gap: 15px;
+	gap: 15px;
 }
 
 .navbar-icons img {
@@ -136,89 +130,85 @@ a:hover {
 }
 
 .navbar-icons img:hover {
-	transform: scale(1.4); 
+	transform: scale(1.4);
 }
 
 .search-bar input[type="search"] {
-    border-radius: 20px;
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    width: 100%; 
-    max-width: 700px; 
+	border-radius: 20px;
+	padding: 5px 10px;
+	border: 1px solid #ddd;
+	width: 100%;
+	max-width: 700px;
 }
-/* tasto sfoglia o catalogo */
+
 .browse-button button {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 15px !important;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    opacity: 0,5;
+	background-color: #007bff;
+	color: #ffffff;
+	border: none;
+	padding: 10px 15px;
+	border-radius: 15px !important;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+	opacity: 0, 5;
 }
 
 .browse-button button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #000000;
-    border-radius: 10px; 
-    transform: scale(1.1); 
-    transition: background-color 0.3s ease, transform 0.3s ease;
+	background-color: rgba(255, 255, 255, 0.5);
+	color: #000000;
+	border-radius: 10px;
+	transform: scale(1.1);
+	transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .icon {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease-in-out;
+	width: 40px;
+	height: 40px;
+	transition: transform 0.3s ease-in-out;
 }
 
 .icon:hover {
-    transform: scale(1.4);
+	transform: scale(1.4);
 }
-/* barra filtri laterale */
+
 .sidebar {
-    position: fixed;
-    top: 50%;
-    left: 10px;
-    width: 25%;
-    height: 34%;
-    background-color: rgba(50, 50, 50, 0.4);
-    padding: 20px;
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
+	position: fixed;
+	top: 50%;
+	left: 10px;
+	width: 25%;
+	height: 34%;
+	background-color: rgba(50, 50, 50, 0.4);
+	padding: 20px;
+	box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow-y: auto;
 }
+
 .content {
-    margin-left: 20%; 
-    padding: 20px;
-    width: 80%;
+	margin-left: 20%;
+	padding: 20px;
+	width: 80%;
 }
 
-/* Stili Specifici per Pagine */
-
-/* Home */
 body.home .navbar {
-	background-color: #11172e; 
+	background-color: #11172e;
 }
 
-/* PlayStation */
 body.playstation {
 	background-image: url('/infinityGaming/images/sfondoPs.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	color: #ffffff; 
+	color: #ffffff;
 }
 
 body.playstation .navbar {
-	background-color: rgba(0, 0, 255, 0.4); 
+	background-color: rgba(0, 0, 255, 0.4);
 }
 
-/* Xbox */
 body.xbox {
 	background-image: url('/infinityGaming/images/sfondoXbox.jpeg');
 	background-size: cover;
@@ -228,10 +218,9 @@ body.xbox {
 }
 
 body.xbox .navbar {
-	background-color: rgba(0, 255, 0, 0.3); 
+	background-color: rgba(0, 255, 0, 0.3);
 }
 
-/* Nintendo */
 body.nintendo {
 	background-image: url('/infinityGaming/images/sfondoNintendo.jpg');
 	background-size: cover;
@@ -241,28 +230,26 @@ body.nintendo {
 }
 
 body.nintendo .navbar {
-	background-color: rgba(102, 0, 0, 0.5); 
+	background-color: rgba(102, 0, 0, 0.5);
 }
 
-/* PC */
 body.pc {
 	background-image: url('/infinityGaming/images/sfondoPc.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;	
+	background-position: center;
 }
 
 body.pc .navbar {
 	background-color: rgba(134, 134, 134, 0.5);
 }
 
-/* Footer */
 footer {
 	background-color: #11172e;
 	color: #ffffff;
 	padding: 20px;
 	text-align: center;
-	border-top: 1px solid #ffffff; 
+	border-top: 1px solid #ffffff;
 }
 
 footer p, footer a {
@@ -275,8 +262,8 @@ footer a:hover {
 
 .carrello {
 	display: none;
-	position: fixed; 
-	top: 70px; 
+	position: fixed;
+	top: 70px;
 	right: 20px;
 	width: 300px;
 	background-color: #11172e;
@@ -284,43 +271,37 @@ footer a:hover {
 	padding: 20px;
 	border-radius: 10px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-	z-index: 1000; 
+	z-index: 1000;
 }
 
 .carrello.visible {
-	display: block; 
+	display: block;
 }
 
-/* pagina profilo */
-
-/* Singoli riquadri principali */
 .card {
 	background-color: #33475b !important;
-	
 	border: 1px solid #2a3a48;
 	border-radius: 10px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-	padding: 20px; 
+	padding: 20px;
 	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .card:hover {
-	transform: translateY(-5px); 
+	transform: translateY(-5px);
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
-/* Righe interne nella sezione Panoramica */
 .panoramica-item {
 	background-color: #455b6b !important;
-	
-	border: 1px solid #3a4f5e; 
-	border-radius: 8px; 
-	padding: 10px; 
+	border: 1px solid #3a4f5e;
+	border-radius: 8px;
+	padding: 10px;
 	margin-bottom: 10px;
 	display: flex;
-	justify-content: space-between; 
-	align-items: center; 
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 	transition: background-color 0.3s ease-in-out, box-shadow 0.3s
 		ease-in-out;
 }
@@ -331,115 +312,109 @@ footer a:hover {
 }
 
 .panoramica-item .label, .panoramica-item .value, .card p, .card li {
-	color: #007bff !important; 
-	font-size: 16px; 
+	color: #007bff !important;
+	font-size: 16px;
 }
 
-p{
+p {
 	color: white;
 }
 
 .card h4, .card h2 {
-	color: #ffffff !important; 
-	font-weight: bold; 
+	color: #ffffff !important;
+	font-weight: bold;
 	margin-bottom: 10px;
 }
 
-/* Sfondo e impostazioni generali per la pagina dei dettagli */
 body.game-details-page {
-    background-image: url("./images/Background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: #ffffff;
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
+	background-image: url("./images/Background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	color: #ffffff;
+	font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
-/* Contenitore principale */
 .game-details .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* Sfondo scuro con trasparenza */
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 1200px;
+	margin: 40px auto;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 10px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Titolo del gioco */
 .game-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #00aaff; /* Colore primario */
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 20px;
+	color: #00aaff;
+	text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Sezione immagine e info */
 .game-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: space-between;
+	width: 100%;
 }
 
-/* Immagine del gioco */
 .game-image img {
-    max-width: 400px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease-in-out;
+	max-width: 400px;
+	height: auto;
+	border-radius: 10px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+	transition: transform 0.3s ease-in-out;
 }
 
 .game-image img:hover {
-    transform: scale(1.05);
+	transform: scale(1.05);
 }
 
-/* Informazioni del gioco */
 .game-info {
-    flex: 1;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1); /* Sfondo leggero con trasparenza */
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    color: #ffffff;
+	flex: 1;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+	color: #ffffff;
 }
 
 .game-info p {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    line-height: 1.5;
+	font-size: 1.2rem;
+	margin-bottom: 15px;
+	line-height: 1.5;
 }
 
 .game-info strong {
-    color: #00aaff; /* Colore primario per le etichette */
+	color: #00aaff;
 }
 
-/* Pulsante "Aggiungi al Carrello" */
 .game-cart {
-    margin-top: 20px;
-    text-align: center;
+	margin-top: 20px;
+	text-align: center;
 }
 
 .game-cart .btn-primary {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+	padding: 10px 20px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #007bff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out, transform 0.2s
+		ease-in-out;
 }
 
 .game-cart .btn-primary:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+	background-color: #0056b3;
+	transform: scale(1.05);
 }

@@ -19,14 +19,20 @@
 	font-weight: bold;
 	animation: flicker 1.5s infinite alternate;
 }
+
+ .carousel-control-prev, 
+ .carousel-control-next{ 
+ 	margin: 600px;
+ 	
+ } 
+
 </style>
 </head>
 <body>
 	<%@ include file="/navbar.jsp"%>
-	
 
 
-	<!-- Carousel Giochi Popolari -->
+
 	<section class="mt-5">
 		<div id="gameCarousel" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-indicators">
@@ -81,18 +87,19 @@
 					</a>
 				</div>
 			</div>
-			<button class="carousel-control-prev" type="button"
-				data-bs-target="#gameCarousel" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon"></span>
-			</button>
-			<button class="carousel-control-next" type="button"
-				data-bs-target="#gameCarousel" data-bs-slide="next">
-				<span class="carousel-control-next-icon"></span>
-			</button>
+			<div style = "background-color: blue !important">
+				<button class="carousel-control-prev" type="button"
+					data-bs-target="#gameCarousel" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				</button>
+				<button class="carousel-control-next" type="button"
+					data-bs-target="#gameCarousel" data-bs-slide="next">
+					<span class="carousel-control-next-icon"></span>
+				</button>
+			</div>
 		</div>
 	</section>
 
-	<!-- Piattaforme Disponibili -->
 	<section class="container platforms my-5">
 		<h2 class="text-center neon-white-blue">Piattaforme Disponibili</h2>
 		<div class="row">
@@ -113,8 +120,9 @@
 				<p class="text-center">Ybox</p>
 			</div>
 			<div class="col-md-3">
-				<a href="/infinityGaming/catalogo?piattaforma=PC" class="text-decoration-none">
-					<img src="/infinityGaming/images/copertinaPC.jpg"
+				<a href="/infinityGaming/catalogo?piattaforma=PC"
+					class="text-decoration-none"> <img
+					src="/infinityGaming/images/copertinaPC.jpg"
 					class="img-fluid rounded mb-4" alt="PC">
 				</a>
 				<p class="text-center">PC</p>
@@ -130,7 +138,6 @@
 		</div>
 	</section>
 
-	<!-- Giochi Bestseller -->
 	<section class="container bestseller my-5">
 		<h2 class="text-center neon-white-blue">Giochi Bestseller</h2>
 		<div class="row">

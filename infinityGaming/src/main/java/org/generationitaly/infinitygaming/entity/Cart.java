@@ -1,43 +1,62 @@
 package org.generationitaly.infinitygaming.entity;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
-//@Entity
-//@Table(name = "carts")
+@Entity
+@Table(name = "cart")
 public class Cart {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 
-    @OneToOne
-    @JoinColumn(name = "utente_id", nullable = false, unique = true)
-    private Utente utente;
+	@OneToOne
+	@JoinColumn(name = "utente_id", nullable = false, unique = true)
+	private Utente utente;
 
-    @OneToMany(mappedBy = "cart", fetch = FetchType.EAGER)
-    private List<CartItem> cartItems;
+	@Column(name = "tot_prezzo", nullable = false)
+	private double totPrezzo;
 
-    // Costruttori
-    public Cart() {}
+	@OneToMany(mappedBy = "cart", fetch = FetchType.EAGER)
+	private List<CartItem> cartItems = new ArrayList<>();
 
-    public Cart(Utente utente) {
-        this.utente = utente;
-    }
+	public int getId() {
+		return id;
+	}
 
-    // Getters e Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public Utente getUtente() { return utente; }
-    public void setUtente(Utente utente) { this.utente = utente; }
+	public Utente getUtente() {
+		return utente;
+	}
 
-    public List<CartItem> getCartItems() { return cartItems; }
-    public void setCartItems(List<CartItem> cartItems) { this.cartItems = cartItems; }
+	public void setUtente(Utente utente) {
+		this.utente = utente;
+	}
 
-    public double getTotalPrice() {
-        return cartItems.stream()
-                .mapToDouble(gioco -> gioco.getPrezzo())
-                .sum();
-    }
+	public double getTotPrezzo() {
+		return totPrezzo;
+	}
+
+	public void setTotPrezzo(double totPrezzo) {
+		this.totPrezzo = totPrezzo;
+	}
+
+	public List<CartItem> getCartItems() {
+		return cartItems;
+	}
+
+	public void setCartItems(List<CartItem> cartItems) {
+		this.cartItems = cartItems;
+	}
+
+	@Override
+	public String toString() {
+		return "Cart [id=" + id + "]";
+	}
 }

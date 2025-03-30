@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <%@ page import="java.util.List" %>
 <%@ page import="org.generationitaly.infinitygaming.entity.CartItem" %>
+<%@ page import="org.generationitaly.infinitygaming.entity.Cart" %>
+<%@ page import="org.generationitaly.infinitygaming.entity.Utente" %>
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -17,10 +19,10 @@
         <h1 class="text-center mb-4">Il tuo carrello</h1>
         
         <% 
-        List<CartItem> cartItems = (List<CartItem>) request.getAttribute("cartItems");
-        Double cartTotal = (Double) request.getAttribute("cartTotal");
-        
-        if (cartItems == null || cartItems.isEmpty()) {
+        Utente utente = (Utente) session.getAttribute("utente");
+        Cart cart = utente.getCart();
+        List<CartItem> item = cart.getCartItems();
+        if (cart == null) {
         %>
             <div class="alert alert-info text-center">
                 <p>Il tuo carrello è vuoto.</p>
@@ -33,36 +35,18 @@
                         <tr>
                             <th>Prodotto</th>
                             <th>Prezzo</th>
-                            <th>Totale</th>
                             <th>Azioni</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% for (CartItem item : cartItems) { %>
+                        <% for (CartItem items : item) { %>
                             <tr>
-                                <td><%= item.getGioco().getTitolo() %></td>
-                                <td>
-                                    <form action="<%=request.getContextPath()%>/cart/update" method="post" class="d-flex align-items-center">
-                                        <input type="hidden" name="cartItemId" value="<%= item.getId() %>">
-                                        <button type="submit" class="btn btn-sm btn-outline-primary">Aggiorna</button>
-                                    </form>
-                                </td>
-                                <td>
-                                    <form action="<%=request.getContextPath()%>/cart/remove" method="post">
-                                        <input type="hidden" name="cartItemId" value="<%= item.getId() %>">
-                                        <button type="submit" class="btn btn-sm btn-danger">Rimuovi</button>
-                                    </form>
-                                </td>
+                                <td><%= items.getGioco().getTitolo() %></td>
+                                <td><%= items.getGioco().getPrezzo() %></td>
+                               <td></td>
                             </tr>
                         <% } %>
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="3" class="text-end"><strong>Totale:</strong></td>
-                            <td><strong><%= String.format("%.2f €", cartTotal) %></strong></td>
-                            <td></td>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
             

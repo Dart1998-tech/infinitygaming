@@ -11,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -48,6 +49,9 @@ public class Utente {
 	
 	@OneToMany(mappedBy = "utente", fetch = FetchType.EAGER)
 	private List<Ordine> ordini = new ArrayList<>();
+	
+	@OneToOne(mappedBy = "utente", fetch = FetchType.EAGER)
+	private Cart cart = new Cart();
 
 	public long getId() {
 		return id;
@@ -119,6 +123,14 @@ public class Utente {
 
 	public void setOrdini(List<Ordine> ordini) {
 		this.ordini = ordini;
+	}
+	
+	public Cart getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
 	}
 
 	@Override
