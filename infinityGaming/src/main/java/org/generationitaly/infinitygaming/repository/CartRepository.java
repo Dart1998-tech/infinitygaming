@@ -7,11 +7,11 @@ import org.generationitaly.infinitygaming.entity.Utente;
 
 public interface CartRepository {
     
-    Optional<Cart> findByUtente(Utente utente);
+    Cart findByUtente(Utente utente);
     
     Cart save(Cart cart);
 
     void delete(Cart cart);
     
-    Optional<Cart> findById(Long id);
+    Cart findById(Long id);
 }

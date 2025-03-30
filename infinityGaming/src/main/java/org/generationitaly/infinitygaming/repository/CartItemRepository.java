@@ -10,22 +10,15 @@ import org.generationitaly.infinitygaming.entity.Gioco;
 public interface CartItemRepository {
     
 
-    List<CartItem> findByCart(Cart cart);
-    
-
-    Optional<CartItem> findByCartAndGioco(Cart cart, Gioco gioco);
-    
+    List<CartItem> findByCart(Cart cart);    
 
     CartItem save(CartItem cartItem);
-    
 
     void delete(CartItem cartItem);
-    
 
-    Optional<CartItem> findById(Long id);
+    CartItem findById(Long id);
     
     void deleteByCart(Cart cart);
 
 
-	Optional<CartItem> findByIdCart(int cartItemId);
 }
