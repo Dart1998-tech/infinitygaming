@@ -38,6 +38,9 @@
                             <th>Numero Ordine</th>
                             <th>Data</th>
                             <th>Totale</th>
+                            
+                            <%-- Dettagli ordine --%>
+                            
                             <th>Azioni</th>
                         </tr>
                     </thead>
