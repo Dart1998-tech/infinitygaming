@@ -12,6 +12,7 @@ import org.generationitaly.infinitygaming.repository.OrdineRepository;
 import org.generationitaly.infinitygaming.repository.impl.OrderItemRepositoryImpl;
 import org.generationitaly.infinitygaming.repository.impl.OrdineRepositoryImpl;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -29,6 +30,14 @@ public class OrdiniServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
+    	
+    	HttpSession session = request.getSession();
+		if (session.getAttribute("utente") == null) {
+			response.sendRedirect("index.jsp");
+			return;
+		}
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("ordini.jsp");
+		requestDispatcher.forward(request, response);
        
     }
 }

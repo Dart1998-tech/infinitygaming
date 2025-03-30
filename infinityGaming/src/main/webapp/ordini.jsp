@@ -21,9 +21,9 @@
         <h1 class="text-center mb-4">I Tuoi Ordini</h1>
         
         <%
-      //  Utente utente = utenteRepository.findByUsername("username");
-     // Utente utente = (Utente) session.getAttribute("utente");
-	  //List<Ordine> ordini = utente.getOrdini();  
+      //Utente utente = utenteRepository.findByUsername("username");
+     	Utente utente = (Utente) session.getAttribute("utente");
+	 	List<Ordine> ordini = utente.getOrdini();  
         if (ordini == null) {
         %>
             <div class="alert alert-info text-center">
