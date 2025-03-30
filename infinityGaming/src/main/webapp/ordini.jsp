@@ -21,18 +21,9 @@
         <h1 class="text-center mb-4">I Tuoi Ordini</h1>
         
         <%
-        
-       	UtenteRepository utenteRepository = UtenteRepositoryImpl.getInstance();
-        
-        Utente utente = utenteRepository.findById(1L);
-		List<Ordine> ordini = utente.getOrdini();
-		for(Ordine ordine : ordini) {
-			System.out.println(ordine);
-			for(OrdineItem item : ordine.getItems()) {
-				System.out.println(item);
-			}
-		}
-        
+      //  Utente utente = utenteRepository.findByUsername("username");
+      Utente utente = (Utente) session.getAttribute("utente");
+	  List<Ordine> ordini = utente.getOrdini();  
         if (ordini == null) {
         %>
             <div class="alert alert-info text-center">
