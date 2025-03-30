@@ -26,22 +26,9 @@ public class CartRepositoryImpl implements CartRepository {
     }
 
     @Override
-    public Optional<Cart> findByUtente(Utente utente) {
-        try (Connection connection = JdbcUtil.getConnection();
-             PreparedStatement ps = connection.prepareStatement("SELECT * FROM cart WHERE utente_id = ?")) {
-            ps.setLong(1, utente.getId());
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                Cart cart = new Cart();
-                cart.setId(rs.getInt("id"));
-                cart.setUtente(utente);
-                return Optional.of(cart);
-            }
-            return Optional.empty();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return Optional.empty();
-        }
+    public Cart findByUtente(Utente utente) {
+		return null;
+
     }
 
     @Override
@@ -89,20 +76,7 @@ public class CartRepositoryImpl implements CartRepository {
     }
 
     @Override
-    public Optional<Cart> findById(Long id) {
-        try (Connection connection = JdbcUtil.getConnection();
-             PreparedStatement ps = connection.prepareStatement("SELECT * FROM cart WHERE id = ?")) {
-            ps.setLong(1, id);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                Cart cart = new Cart();
-                cart.setId(rs.getInt("id"));
-                return Optional.of(cart);
-            }
-            return Optional.empty();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return Optional.empty();
-        }
+    public Cart findById(Long id) {
+		return null;
     }
 }
