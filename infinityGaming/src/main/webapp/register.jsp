@@ -121,11 +121,11 @@
 		<form method="post" action="registrazione">
 			<h1>Registrati</h1>
 			<div class="input-box">
-				<input type="text" name="firstName" value="" placeholder="Nome"/>
+				<input type="text" name="nome" value="" placeholder="Nome"/>
 			</div>
 			
 			<div class="input-box">
-				<input type="text" name="lastName" value="" placeholder="Cognome"/>
+				<input type="text" name="cognome" value="" placeholder="Cognome"/>
 			</div>	
 	
 			<div class="input-box">

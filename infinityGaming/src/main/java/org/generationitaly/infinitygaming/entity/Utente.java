@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -37,21 +38,21 @@ public class Utente {
 	@Column(name = "username", nullable = false, length = 45, unique = true)
 	private String username;
 
-	@Column(name = "fondi", nullable = false)
-	private double fondi;
-
 	@Column(name = "password", nullable = false, length = 45)
 	private String password;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "regdate", nullable = false)
 	private Date regdate;
-	
+
+	@Column(name = "fondi", nullable = false)
+	private double fondi;
+
+	@OneToOne(mappedBy = "utente", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE })
+	private Cart cart;
+
 	@OneToMany(mappedBy = "utente", fetch = FetchType.EAGER)
 	private List<Ordine> ordini = new ArrayList<>();
-	
-	@OneToOne(mappedBy = "utente", fetch = FetchType.EAGER)
-	private Cart cart = new Cart();
 
 	public long getId() {
 		return id;
@@ -97,8 +98,8 @@ public class Utente {
 		return fondi;
 	}
 
-	public void setFondi(double d) {
-		this.fondi = d;
+	public void setFondi(double fondi) {
+		this.fondi = fondi;
 	}
 
 	public String getPassword() {
@@ -124,7 +125,7 @@ public class Utente {
 	public void setOrdini(List<Ordine> ordini) {
 		this.ordini = ordini;
 	}
-	
+
 	public Cart getCart() {
 		return cart;
 	}

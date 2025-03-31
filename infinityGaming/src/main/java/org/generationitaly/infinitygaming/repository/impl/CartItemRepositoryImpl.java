@@ -30,21 +30,7 @@ public class CartItemRepositoryImpl implements CartItemRepository {
     	return null;
     }
 
-    @Override
-    public CartItem save(CartItem cartItem) {
-
-    	return null;
-    }
-
-    @Override
-    public void delete(CartItem cartItem) {
-    }
-
-    @Override
-    public CartItem findById(Long id) {
-
-    	return null;
-    }
+    
 
     @Override
     public void deleteByCart(Cart cart) {

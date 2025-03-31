@@ -14,7 +14,7 @@ public class Cart {
 	private int id;
 
 	@OneToOne
-	@JoinColumn(name = "utente_id", nullable = false, unique = true)
+	@JoinColumn(name = "utente_id", nullable = false)
 	private Utente utente;
 
 	@Column(name = "tot_prezzo", nullable = false)

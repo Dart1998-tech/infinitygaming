@@ -40,16 +40,5 @@ public class CartServlet extends HttpServlet {
 			response.sendRedirect("login");
 			return;
 		}
-		
-		Utente utente = (Utente) session.getAttribute("utente");
-		
-		int utenteId = utente.getId();
-    	
-		
-		
-		Cart cart = new Cart();
-		cart.setUtente(utente);
-		
-		
     }
 }

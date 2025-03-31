@@ -11,7 +11,7 @@ CREATE TABLE genere(
 
 -- Tabella 'utente'
 CREATE TABLE utente (
-    id INT(10) NOT NULL AUTO_INCREMENT,
+    id INT(10) NOT NULL AUTO_INCREMENT ,
     nome VARCHAR(45) NOT NULL,
     cognome VARCHAR(45) NOT NULL,
     email VARCHAR(65) NOT NULL,
@@ -51,14 +51,11 @@ CREATE TABLE game_piattaforma (
     FOREIGN KEY (piattaforma_id) REFERENCES piattaforma(id)
 );
 
-
-
 -- Tabella 'cart' (relazione opzionale con 'utente')
 CREATE TABLE cart (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    utente_id INT not NULL,
-    tot_prezzo DOUBLE NOT NULL,
-    FOREIGN KEY (utente_id) REFERENCES utente(id)
+    utente_id INT NOT NULL,
+    tot_prezzo DOUBLE NOT NULL DEFAULT 0
 );
 
 -- Tabella 'cart_items' (relazione con 'cart' e 'game')

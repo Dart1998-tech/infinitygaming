@@ -6,17 +6,12 @@ import java.util.Optional;
 import org.generationitaly.infinitygaming.entity.Cart;
 import org.generationitaly.infinitygaming.entity.CartItem;
 import org.generationitaly.infinitygaming.entity.Gioco;
+import org.generationitaly.infinitygaming.entity.Utente;
 
-public interface CartItemRepository {
+public interface CartItemRepository extends JpaRepository<CartItem, Long>{
     
 
     List<CartItem> findByCart(Cart cart);    
-
-    CartItem save(CartItem cartItem);
-
-    void delete(CartItem cartItem);
-
-    CartItem findById(Long id);
     
     void deleteByCart(Cart cart);
 
