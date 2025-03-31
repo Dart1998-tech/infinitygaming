@@ -34,8 +34,8 @@
 		} else {
 		%>
 		<div class="table-responsive">
-			<table class="table table-bordered">
-				<thead class="table-dark">
+			<table class="table table-dark">
+				<thead>
 					<tr>
 						<th>Prodotto</th>
 						<th>Prezzo</th>
@@ -52,7 +52,7 @@
 						<td>
 							<form action="elimina-item" method="post">
 								<input type="hidden" name="idCartItem" value="<%= item.getId() %>">
-								<button type="submit">Elimina</button>
+								<button class = "btn btn-danger fw-bold" type="submit">Elimina</button>
 							</form>
 						</td>
 					</tr>

@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <%@ page import="java.util.List" %>
 <%@ page import="org.generationitaly.infinitygaming.entity.CartItem" %>
+<%@ page import="org.generationitaly.infinitygaming.entity.Cart" %>
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -17,14 +18,14 @@
         <h1 class="text-center mb-4">Checkout</h1>
         
         <% 
-        List<CartItem> cartItems = (List<CartItem>) request.getAttribute("cartItems");
-        Float cartTotal = (Float) request.getAttribute("cartTotal");
+        Cart cart = (Cart )request.getAttribute("cart");
+        List<CartItem> cartItems = cart.getCartItems();
         
-        if (cartItems == null || cartItems.isEmpty()) {
+        if (cartItems.isEmpty()) {
         %>
             <div class="alert alert-info text-center">
                 <p>Il tuo carrello è vuoto. Non puoi procedere al checkout.</p>
-                <a href="<%=request.getContextPath()%>/welcome-home.jsp" class="btn btn-primary mt-3">Torna allo shopping</a>
+                <a href="/infinityGaming/home" class="btn btn-primary mt-3">Torna allo shopping</a>
             </div>
         <% } else { %>
             <div class="row">
@@ -34,7 +35,7 @@
                             <h5 class="mb-0">Dati di spedizione</h5>
                         </div>
                         <div class="card-body">
-                            <form action="<%=request.getContextPath()%>/checkout/process" method="post" id="checkout-form">
+                            <form action="<%=request.getContextPath()%>/checkout" method="post" id="checkout-form">
                                 <div class="row mb-3">
                                     <div class="col-md-6">
                                         <label for="nome" class="form-label">Nome</label>
@@ -143,10 +144,14 @@
                         </div>
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
-                                <% for (CartItem item : cartItems) { %>
+                                <% 
+                                double cartTotal = 0;
+                                for (CartItem item : cartItems) { 
+                                	cartTotal += item.getGioco().getPrezzo();
+                                %>
                                     <li class="list-group-item d-flex justify-content-between lh-sm">
                                         <div>
-                                            <h6 class="my-0"><%= item.getGioco().getTitolo() %></h6>
+                                            <h6 class="my-0"><%= item.getGioco().getTitolo() %> |   <%=  String.format("%.2f €", item.getGioco().getPrezzo()) %></h6>
                                         </div>
                                     </li>
                                 <% } %>
@@ -157,7 +162,7 @@
                             </ul>
                             
                             <div class="mt-3">
-                                <a href="<%=request.getContextPath()%>/cart" class="btn btn-outline-secondary w-100">Torna al carrello</a>
+                                <a href="<%=request.getContextPath()%>/carrello" class="btn btn-outline-secondary w-100">Torna al carrello</a>
                             </div>
                         </div>
                     </div>

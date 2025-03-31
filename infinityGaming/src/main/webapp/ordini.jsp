@@ -21,9 +21,7 @@
         <h1 class="text-center mb-4">I Tuoi Ordini</h1>
         
         <%
-      //Utente utente = utenteRepository.findByUsername("username");
-     	Utente utente = (Utente) session.getAttribute("utente");
-	 	List<Ordine> ordini = utente.getOrdini();  
+	 	List<Ordine> ordini = (List<Ordine>) request.getAttribute("ordini"); 
         if (ordini == null) {
         %>
             <div class="alert alert-info text-center">
@@ -32,15 +30,12 @@
             </div>
         <% } else { %>
             <div class="table-responsive">
-                <table class="table table-bordered table-hover">
-                    <thead class="table-dark">
+                <table class="table table-dark">
+                    <thead>
                         <tr>
                             <th>Numero Ordine</th>
                             <th>Data</th>
                             <th>Totale</th>
-                            
-                            <%-- Dettagli ordine --%>
-                            
                             <th>Azioni</th>
                         </tr>
                     </thead>
@@ -50,7 +45,12 @@
                                 <td>#<%= ordine.getId() %></td>
                                 <td><%=  new java.util.Date()  %></td>
                                 <td><%= ordine.getPrezzo() %></td>
-                                <td></td>
+                                <td>
+                                	<form action="dettaglio-ordine" method="get">
+                                	<input type="hidden" name="idOrdine" value="<%= ordine.getId()%>">
+                                		<button  type="submit" class="btn btn-primary" >DETTAGLIO</button>
+                                	</form>
+                                </td>
                             </tr>
                         <% } %>
                     </tbody>

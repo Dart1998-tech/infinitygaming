@@ -86,8 +86,8 @@
 				<hr>
 				<br>
 				<p style="color: #fff !important">
-					Saldo: <strong style="color: rgba(51, 129, 255, 1) !important"><%=utente.getFondi()%>
-						€</strong>
+					Saldo: <strong style="color: rgba(51, 129, 255, 1) !important"><%= String.format("%.2f €", utente.getFondi()) %>
+						</strong>
 				</p>
 				<form action="update-fondi" method="get">
 					<button type="submit" class="btn btn-outline-light ms-2"

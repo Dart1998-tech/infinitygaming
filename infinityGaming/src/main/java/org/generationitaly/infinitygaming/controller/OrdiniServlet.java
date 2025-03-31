@@ -2,14 +2,10 @@ package org.generationitaly.infinitygaming.controller;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
-import org.generationitaly.infinitygaming.entity.OrdineItem;
 import org.generationitaly.infinitygaming.entity.Ordine;
 import org.generationitaly.infinitygaming.entity.Utente;
-import org.generationitaly.infinitygaming.repository.OrderItemRepository;
 import org.generationitaly.infinitygaming.repository.OrdineRepository;
-import org.generationitaly.infinitygaming.repository.impl.OrderItemRepositoryImpl;
 import org.generationitaly.infinitygaming.repository.impl.OrdineRepositoryImpl;
 
 import jakarta.servlet.RequestDispatcher;
@@ -25,7 +21,6 @@ public class OrdiniServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
     private OrdineRepository ordineRepository = OrdineRepositoryImpl.getInstance();
-    private OrderItemRepository orderItemRepository= OrderItemRepositoryImpl.getInstance();
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
@@ -36,6 +31,12 @@ public class OrdiniServlet extends HttpServlet {
 			response.sendRedirect("index.jsp");
 			return;
 		}
+		
+		Utente utente = (Utente) session.getAttribute("utente");
+		List<Ordine> ordini = ordineRepository.findByUtente(utente);
+
+		request.setAttribute("ordini", ordini);
+		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("ordini.jsp");
 		requestDispatcher.forward(request, response);
        

@@ -28,7 +28,7 @@ public class OrdineItem {
 	@Column(name = "prezzo")
 	private double prezzo;
 
-	@Column(name = "game_key", unique = true, length = 16, nullable = false)
+	@Column(name = "game_key", unique = true, length = 300, nullable = false)
 	private String gameKey;
 
 	public int getId() {

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -37,7 +38,7 @@ public class Ordine {
 	@JoinColumn(name = "utente_id", nullable = false)
 	private Utente utente;
 
-	@OneToMany(mappedBy = "ordine", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "ordine", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	private List<OrdineItem> items = new ArrayList<>();
 
 	public int getId() {
