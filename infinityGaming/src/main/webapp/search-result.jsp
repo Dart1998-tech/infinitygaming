@@ -31,6 +31,16 @@
                         <h5 class="card-title"><%= gioco.getTitolo() %></h5>
                         <p><strong>Software House:</strong> <%= gioco.getSoftwareHouse() %></p>
                         <a href="gioco?id=<%= gioco.getId() %>" class="btn btn-primary">Visualizza Dettagli</a>
+                       <p> 
+                        <form action="carrello" method="post">
+                       <input type = "hidden" name = "idGioco" value = <%= gioco.getId() %>>
+							<button type="submit" class="btn btn-primary"
+									data-bs-toggle="modal" data-bs-target="#grazieModal">
+									Aggiungi al carrello
+							</button> 
+							</form>
+							
+							
                     </div>
                 </div>
             </div>
