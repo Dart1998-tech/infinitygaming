@@ -160,6 +160,28 @@
                                     <strong><%= String.format("%.2f €", cartTotal) %></strong>
                                 </li>
                             </ul>
+                            <br>
+                            
+                            <!-- Flavio checkbox per pagamento col saldo disponibile nel portafoglio, test per comparsa pulsante e saldo -->
+                            <div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="myFunction()">
+							  <label class="form-check-label" for="flexSwitchCheckDefault">Paga con il saldo nel portafoglio</label>
+							  <p id="text" style="display:none">Checkbox is CHECKED!</p>
+							  
+							  <script>
+							  		function myFunction(){
+								  		var checkbox = document.getElementById("flexSwitchCheckDefault");
+								  		var text = document.getElementById("text");
+								  		if (checkBox.checked == true){
+								  		    text.style.display = "block";
+								  		  } else {
+								  		     text.style.display = "none";
+								  		  }
+								  	}
+							  </script>
+							  <!-- Flavio checkbox per pagamento col saldo disponibile nel portafoglio, test per comparsa pulsante e saldo -->
+							  
+							</div>
                             
                             <div class="mt-3">
                                 <a href="<%=request.getContextPath()%>/carrello" class="btn btn-outline-secondary w-100">Torna al carrello</a>
