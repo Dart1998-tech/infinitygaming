@@ -27,7 +27,7 @@
 		%>
 		<div class="alert alert-info text-center">
 			<p>Il tuo carrello è vuoto.</p>
-			<a href="/infinityGaming/welcome-home.jsp"
+			<a href="/infinityGaming/home"
 				class="btn btn-primary mt-3">Continua lo shopping</a>
 		</div>
 		<%
