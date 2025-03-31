@@ -253,6 +253,7 @@ none
 						<a href="gioco?id=<%=gioco.getId()%>" class="btn btn-primary w-100 mb-2">Info</a>
 						<input type="hidden" name="quantity" value="1">
 						<form action="carrello" method="post">
+						<input type = "hidden" name = "idGioco" value = <%= gioco.getId() %>>
 							<button type="submit" class="btn btn-primary"
 									data-bs-toggle="modal" data-bs-target="#grazieModal">
 									Aggiungi al carrello
