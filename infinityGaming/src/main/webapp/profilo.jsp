@@ -45,38 +45,50 @@
 						</div>
 					</div>
 				</div>
-				
-				
-				<%-- modifica panoramica rivedi logica per la libreria (DINAMICA) --%>
-				
-				
-				<div class="col-md-8">
-					<div class="card">
-						<div class="card-body">
-							<h2 class="card-title">Panoramica</h2>
-							<hr>
-							<div class="panoramica-item">
-								<span class="label" style="color: #fff !important">Amici:</span>
-								<span class="value">0</span>
-							</div>
-							<div class="panoramica-item">
-								<span class="label" style="color: #fff !important">Recensioni:</span>
-								<span class="value">0</span>
-							</div>
-							<div class="panoramica-item">
-								<span class="label" style="color: #fff !important">Wishlist:</span>
-								<span class="value">0</span>
-							</div>
-							<div class="panoramica-item">
-								<span class="label" style="color: #fff !important">Giochi:</span>
-								<span class="value">19</span>
-							</div>
-						</div>
-					</div>
+	</form>
+
+	<div class="col-md-8">
+		<div class="card">
+			<div class="card-body">
+				<h2 class="card-title">Panoramica</h2>
+				<hr>
+				<div class="panoramica-item">
+					<span class="label" style="color: #fff !important">Amici:</span> <span
+						class="value">0</span>
+				</div>
+				<div class="panoramica-item">
+					<span class="label" style="color: #fff !important">Recensioni:</span>
+					<span class="value">0</span>
+				</div>
+				<div class="panoramica-item">
+					<span class="label" style="color: #fff !important">Wishlist:</span>
+					<span class="value">0</span>
+				</div>
+				<div class="panoramica-item">
+					<span class="label" style="color: #fff !important">Giochi:</span> <span
+						class="value">19</span>
 				</div>
 			</div>
-		</section>
-	</form>
+		</div>
+		<br>
+		<div class="card">
+				<div class="card-body">
+					<h2 class="card-title">I miei Ordini</h2>
+					<hr>
+					<form action="ordini" method="get">
+						<button type="submit" class="btn btn-outline-light ms-2"
+							aria-label="update-fondi">Ordini</button>
+					</form>
+				</div>
+			</div>
+	</div>
+
+
+
+
+
+
+			
 
 
 	<section class="container my-5">
@@ -86,8 +98,8 @@
 				<hr>
 				<br>
 				<p style="color: #fff !important">
-					Saldo: <strong style="color: rgba(51, 129, 255, 1) !important"><%= String.format("%.2f €", utente.getFondi()) %>
-						</strong>
+					Saldo: <strong style="color: rgba(51, 129, 255, 1) !important"><%=String.format("%.2f €", utente.getFondi())%>
+					</strong>
 				</p>
 				<form action="update-fondi" method="get">
 					<button type="submit" class="btn btn-outline-light ms-2"
