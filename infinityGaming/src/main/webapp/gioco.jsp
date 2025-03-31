@@ -87,7 +87,8 @@
 	Gioco gioco = (Gioco) request.getAttribute("gioco");
 	
 	%>
-	<form action="gioco" method="get">
+	<form action="carrello" method="post">
+	<input type="hidden" name = "idGioco" value = "<%= gioco.getId()%>">
 		<div>
 			<div>
 				<div class="col-md-4 mb-4" data-genere="<%=gioco.getGenere()%>"
@@ -119,7 +120,7 @@
 								<%=gioco.getVoto()%>/10
 							</p>
 							<div class="bottone">
-								<button type="button" class="btn btn-primary"
+								<button type="submit" class="btn btn-primary"
 									data-bs-toggle="modal" data-bs-target="#grazieModal">
 									Aggiungi al carrello</button>
 							</div>

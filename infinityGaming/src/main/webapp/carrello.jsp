@@ -19,14 +19,14 @@
         <h1 class="text-center mb-4">Il tuo carrello</h1>
         
         <% 
-        Utente utente = (Utente) session.getAttribute("utente");
-        Cart cart = utente.getCart();
-        List<CartItem> item = cart.getCartItems();
-        if (cart == null) {
+        
+        Cart cart = (Cart) request.getAttribute("cart");
+       	List<CartItem> cartItems = cart.getCartItems();
+        if (cartItems.isEmpty()) {
         %>
             <div class="alert alert-info text-center">
                 <p>Il tuo carrello è vuoto.</p>
-                <a href="<%=request.getContextPath()%>/welcome-home.jsp" class="btn btn-primary mt-3">Continua lo shopping</a>
+                <a href="/infinityGaming/welcome-home.jsp" class="btn btn-primary mt-3">Continua lo shopping</a>
             </div>
         <% } else { %>
             <div class="table-responsive">
@@ -39,10 +39,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% for (CartItem items : item) { %>
+                        <% for (CartItem item : cartItems) { %>
                             <tr>
-                                <td><%= items.getGioco().getTitolo() %></td>
-                                <td><%= items.getGioco().getPrezzo() %></td>
+                                <td><%= item.getGioco().getTitolo() %></td>
+                                <td><%= item.getGioco().getPrezzo() %></td>
                                <td></td>
                             </tr>
                         <% } %>
@@ -51,10 +51,9 @@
             </div>
             
             <div class="d-flex justify-content-between mt-4">
-                <a href="<%=request.getContextPath()%>/welcome-home.jsp" class="btn btn-secondary">Continua lo shopping</a>
+                <a href="/infinityGaming/welcome-home.jsp" class="btn btn-secondary">Continua lo shopping</a>
                 <div>
-                    <a href="<%=request.getContextPath()%>/cart/clear" class="btn btn-outline-danger me-2">Svuota carrello</a>
-                    <a href="<%=request.getContextPath()%>/checkout" class="btn btn-success">Procedi al checkout</a>
+                    <a href="/infinityGaming/checkout" class="btn btn-success">Procedi al checkout</a>
                 </div>
             </div>
         <% } %>

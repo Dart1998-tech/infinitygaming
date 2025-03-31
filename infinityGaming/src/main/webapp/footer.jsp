@@ -1,4 +1,14 @@
+<style type="text/css">
+	
+	.footer-block{
+	
+	}
+	
+</style>
+
 <footer>
+<div class = "footer-block">
+
     <div class="row">
         <div class="col-md-6">
             <p>
@@ -15,5 +25,6 @@
 		</div>
 
     </div>
+</div>
 </footer>
  

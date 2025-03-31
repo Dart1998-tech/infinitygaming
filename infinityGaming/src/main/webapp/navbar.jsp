@@ -32,7 +32,7 @@
         <a href="/infinityGaming/utente" aria-label="Vai al profilo">
             <img src="/infinityGaming/images/man.png" alt="Profilo utente" class="icon">
         </a>
-        <a href="javascript:void(0);" id="carrello-btn" aria-label="Visualizza carrello">
+        <a href="/infinityGaming/carrello" id="carrello-btn" aria-label="Visualizza carrello">
             <img src="/infinityGaming/images/shopping-cart.png" alt="Carrello acquisti" class="icon">
         </a>
     </div>
