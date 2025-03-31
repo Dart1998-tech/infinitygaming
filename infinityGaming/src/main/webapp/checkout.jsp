@@ -32,7 +32,7 @@
                 <div class="col-md-8">
                     <div class="card mb-4">
                         <div class="card-header">
-                            <h5 class="mb-0">Dati di spedizione</h5>
+                            <h5 class="mb-0">Dati di fatturazione</h5>
                         </div>
                         <div class="card-body">
                             <form action="<%=request.getContextPath()%>/checkout" method="post" id="checkout-form">
