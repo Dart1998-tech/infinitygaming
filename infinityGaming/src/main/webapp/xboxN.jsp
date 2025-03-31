@@ -252,9 +252,12 @@ none
 							Prezzo: €<%=gioco.getPrezzo() != 0 ? gioco.getPrezzo() : "0.00"%></p>
 						<a href="gioco?id=<%=gioco.getId()%>" class="btn btn-primary w-100 mb-2">Info</a>
 						<input type="hidden" name="quantity" value="1">
-						<button type="submit"
-							class="btn btn-success w-100 add-to-cart-btn">Aggiungi
-							al Carrello</button>
+						<form action="carrello" method="post">
+							<button type="submit" class="btn btn-primary"
+									data-bs-toggle="modal" data-bs-target="#grazieModal">
+									Aggiungi al carrello
+							</button> 
+							</form>
 					</div>
 				</div>
 			</div>
