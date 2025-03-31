@@ -55,7 +55,8 @@ CREATE TABLE game_piattaforma (
 CREATE TABLE cart (
     id INT AUTO_INCREMENT PRIMARY KEY,
     utente_id INT NOT NULL,
-    tot_prezzo DOUBLE NOT NULL DEFAULT 0
+    tot_prezzo DOUBLE NOT NULL DEFAULT 0,
+    FOREIGN KEY (utente_id) references utente(id)
 );
 
 -- Tabella 'cart_items' (relazione con 'cart' e 'game')
@@ -82,7 +83,7 @@ CREATE TABLE ordine_item (
     ordine_id INT NOT NULL,
     game_id INT NOT NULL,
     prezzo DOUBLE NOT NULL,
-    game_key VARCHAR(16) UNIQUE NOT NULL,  
+    game_key VARCHAR(300) UNIQUE NOT NULL,  
     FOREIGN KEY (ordine_id) REFERENCES ordine(id),
     FOREIGN KEY (game_id) REFERENCES game(id)
 );
