@@ -123,6 +123,12 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="metodoPagamento" id="fondi" value="fondi">
+                                    <label class="form-check-label" for="fondi">
+                                        Paga con i fondi del portafoglio
+                                    </label>
+                                </div>
                                 
                                 <div class="form-check mb-3">
                                     <input class="form-check-input" type="checkbox" id="termini" name="termini" required>
@@ -130,6 +136,7 @@
                                         Accetto i termini e le condizioni
                                     </label>
                                 </div>
+                                
                                 
                                 <button type="submit" class="btn btn-primary btn-lg w-100">Completa l'ordine</button>
                             </form>
@@ -143,7 +150,7 @@
                             <h5 class="mb-0">Riepilogo ordine</h5>
                         </div>
                         <div class="card-body">
-                            <ul class="list-group list-group-flush">
+                            <ul class="">
                                 <% 
                                 double cartTotal = 0;
                                 for (CartItem item : cartItems) { 
@@ -161,28 +168,6 @@
                                 </li>
                             </ul>
                             <br>
-                            
-                            <!-- Flavio checkbox per pagamento col saldo disponibile nel portafoglio, test per comparsa pulsante e saldo -->
-                            <div class="form-check form-switch">
-							  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="myFunction()">
-							  <label class="form-check-label" for="flexSwitchCheckDefault">Paga con il saldo nel portafoglio</label>
-							  <p id="text" style="display:none">Checkbox is CHECKED!</p>
-							  
-							  <script>
-							  		function myFunction(){
-								  		var checkbox = document.getElementById("flexSwitchCheckDefault");
-								  		var text = document.getElementById("text");
-								  		if (checkBox.checked == true){
-								  		    text.style.display = "block";
-								  		  } else {
-								  		     text.style.display = "none";
-								  		  }
-								  	}
-							  </script>
-							  <!-- Flavio checkbox per pagamento col saldo disponibile nel portafoglio, test per comparsa pulsante e saldo -->
-							  
-							</div>
-                            
                             <div class="mt-3">
                                 <a href="<%=request.getContextPath()%>/carrello" class="btn btn-outline-secondary w-100">Torna al carrello</a>
                             </div>
@@ -201,13 +186,16 @@
         document.addEventListener('DOMContentLoaded', function() {
             const cartaRadio = document.getElementById('carta');
             const paypalRadio = document.getElementById('paypal');
+            const fondiRadio = document.getElementById('fondi')
             const cartaDetails = document.getElementById('carta-details');
             const paypalDetails = document.getElementById('paypal-details');
+            const fondiDetails = document.getElementById('fondi-details')
             
             cartaRadio.addEventListener('change', function() {
                 if (this.checked) {
                     cartaDetails.classList.remove('d-none');
                     paypalDetails.classList.add('d-none');
+                    fondiDetails.classList.add('d-none');
                     
                     // Rendi obbligatori i campi della carta
                     document.getElementById('numeroCarta').required = true;
@@ -220,10 +208,19 @@
                 }
             });
             
+            cartaFondi.addEventListener('change', function() {
+                if (this.checked) {
+                    cartaDetails.classList.add('d-none');
+                    paypalDetails.classList.add('d-none');
+                    fondiDetails.classList.remove('d-none');
+                }
+            });
+            
             paypalRadio.addEventListener('change', function() {
                 if (this.checked) {
                     cartaDetails.classList.add('d-none');
                     paypalDetails.classList.remove('d-none');
+                    fondiDetails.classList.add('d-none');
                     
                     // Rendi non obbligatori i campi della carta
                     document.getElementById('numeroCarta').required = false;
