@@ -107,12 +107,13 @@
                             Prezzo: <span class="badge bg-success">€<%=gioco.getPrezzo() != 0 ? gioco.getPrezzo() : "0.00"%></span></p>
                         <div class="d-grid gap-2">
                             <a href="gioco?id=<%=gioco.getId()%>" class="btn btn-primary">Info</a>
-							<!-- <form action="carrello" method="post">
+							<form action="carrello" method="post">
+							<input type = "hidden" name = "idGioco" value = <%= gioco.getId() %>>
 							<button type="submit" class="btn btn-primary"
 									data-bs-toggle="modal" data-bs-target="#grazieModal">
 									Aggiungi al carrello
 							</button> 
-							</form>  -->                      
+							</form>                     
 						</div>
                     </div>
                 </div>
