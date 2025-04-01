@@ -25,7 +25,7 @@
         SFOGLIA
     </a>
     <form action="logout" method="post">
-    	<button type="submit" class="btn btn-outline-light ms-2" aria-label="logout">
+    	<button type="submit" class="btn btn-outline-danger ms-2" aria-label="logout">
         LOGOUT
     	</button>
     </form>
