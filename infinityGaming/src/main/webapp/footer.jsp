@@ -1,14 +1,16 @@
 <style type="text/css">
 	
-	.footer-block{
-	   min-height:10vh; display:flex; flex-direction:column; 
-            justify-content:space-between;
+	footer{
+	   min-height:10dvh;
+ 	   padding: 0;
+ 	   display:flex;
+ 	   flex-direction:column;
+      	justify-content:space-between;
 	}
 	
 </style>
 
 <footer>
-<div class = "footer-block">
 
     <div class="row">
         <div class="col-md-6">
@@ -26,6 +28,5 @@
 		</div>
 
     </div>
-</div>
 </footer>
  

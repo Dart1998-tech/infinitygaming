@@ -18,6 +18,20 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <link rel="stylesheet" href="style.css">
 
+	<style type="text/css">
+	
+		.footer{
+		
+		  width: 100%;
+		  height: 100px;
+		  position: relative;
+		  padding: 650px 0px 5px;
+		  min-height:10vh;
+			
+		}
+	
+	</style>
+
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>
@@ -63,9 +77,13 @@
 				agli ordini</a>
 		</div>
 	</section>
-
+	
+	<div class="footer">
+	
 	<%@ include file="footer.jsp"%>
-
+	
+	</div>
+	
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -23,15 +23,16 @@
 
 	<%@ include file="navbar.jsp"%>
 
-	<form action="utente" method="get">
-		<section class="container my-5">
-			<h1 class="text-center mb-4">Profilo Utente</h1>
 
-			<div class="row">
-				<div class="col-md-4">
-					<div class="card text-center">
-						<img src="./images/man.png" alt="Foto Profilo"
-							class="card-img-top rounded-circle p-4">
+	<section class="container my-5">
+		<h1 class="text-center mb-4">Profilo Utente</h1>
+
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card text-center">
+					<img src="./images/man.png" alt="Foto Profilo"
+						class="card-img-top rounded-circle p-4">
+					<form action="utente" method="get">
 						<div class="card-body">
 							<h4 class="card-title"><%=utente.getUsername()%></h4>
 							<hr>
@@ -43,52 +44,54 @@
 									style="color: rgba(51, 129, 255, 1) !important"><%=formattedRegDate%></strong>
 							</p>
 						</div>
+					</form>
+					<div class="card">
+						<div class="card-body">
+							<h2 class="card-title">I miei Ordini</h2>
+							<hr>
+
+							<form action="ordini" method="get">
+								<button type="submit" class="btn btn-outline-light ms-2">Ordini</button>
+							</form>
+						</div>
 					</div>
 				</div>
-	</form>
+			</div>
 
-	<div class="col-md-8">
-		<div class="card">
-			<div class="card-body">
-				<h2 class="card-title">Panoramica</h2>
-				<hr>
-				<div class="panoramica-item">
-					<span class="label" style="color: #fff !important">Amici:</span> <span
-						class="value">0</span>
+
+
+			<div class="col-md-8">
+				<div class="card">
+					<div class="card-body">
+						<h2 class="card-title">Panoramica</h2>
+						<hr>
+						<div class="panoramica-item">
+							<span class="label" style="color: #fff !important">Amici:</span>
+							<span class="value">0</span>
+						</div>
+						<br>
+						<div class="panoramica-item">
+							<span class="label" style="color: #fff !important">Recensioni:</span>
+							<span class="value">0</span>
+						</div>
+						<br>
+						<div class="panoramica-item">
+							<span class="label" style="color: #fff !important">Wishlist:</span>
+							<span class="value">0</span>
+						</div>
+						<br>
+						<div class="panoramica-item">
+							<span class="label" style="color: #fff !important">Giochi:</span>
+							<span class="value">19</span>
+						</div>
+						<br>
+					</div>
 				</div>
-				<div class="panoramica-item">
-					<span class="label" style="color: #fff !important">Recensioni:</span>
-					<span class="value">0</span>
-				</div>
-				<div class="panoramica-item">
-					<span class="label" style="color: #fff !important">Wishlist:</span>
-					<span class="value">0</span>
-				</div>
-				<div class="panoramica-item">
-					<span class="label" style="color: #fff !important">Giochi:</span> <span
-						class="value">19</span>
-				</div>
+				<br>
 			</div>
 		</div>
-		<br>
-		<div class="card">
-				<div class="card-body">
-					<h2 class="card-title">I miei Ordini</h2>
-					<hr>
-					<form action="ordini" method="get">
-						<button type="submit" class="btn btn-outline-light ms-2"
-							aria-label="update-fondi">Ordini</button>
-					</form>
-				</div>
-			</div>
-	</div>
+	</section>
 
-
-
-
-
-
-			
 
 
 	<section class="container my-5">
@@ -140,8 +143,6 @@
 			</div>
 		</div>
 	</section>
-
-
 
 	<%@ include file="footer.jsp"%>
 

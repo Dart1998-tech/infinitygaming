@@ -13,6 +13,21 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+	<style type = "text/css">
+
+		.footer{
+	
+		  width: 100%;
+		  height: 100px;
+		  position: relative;
+		  padding: 750px 0px 5px;
+		  min-height:10vh;
+			
+		}
+
+	</style>
+
+
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>
@@ -75,8 +90,13 @@
 		}
 		%>
 	</section>
-
-	<%@ include file="footer.jsp"%>
+	
+	<div class="footer">
+	
+		<%@ include file="footer.jsp"%>
+		
+	</div>
+	
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
