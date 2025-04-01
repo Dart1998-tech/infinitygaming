@@ -24,23 +24,36 @@
 	font-family: "Poppins", sans-serif;
 }
 
+body {
+	display: flex;
+	align-items: center;
+}
+
 .wrapper {
 	display: flex;
-	gap: 15px;
-	width: 1650px;
-	height: 670px;
+	gap: 20px;
+	width: 2000px;
+	height: 900px;
 	background: rgba(51, 71, 91, 0.8);
 	color: #fff;
 	border-radius: 10px;
-	padding: 30px 30px;
+	padding: 20px 20px;
 	margin-left: 120px;
-	margin-bottom: 30px;
+	margin-bottom: 5px;
 	margin-top: 30px;
 }
 
+.footer {
+	width: 100%;
+	height: 100px;
+	position: relative;
+	padding: 130px 0px 5px;
+	min-height: 10vh;
+}
+
 .wrapper img {
-	width: 500px;
-	height: 600px;
+	width: 800px;
+	height: 830px;
 }
 
 .wrapper .info {
@@ -83,12 +96,10 @@
 <body>
 	<%@ include file="navbar.jsp"%>
 	<%
-		
 	Gioco gioco = (Gioco) request.getAttribute("gioco");
-	
 	%>
 	<form action="carrello" method="post">
-	<input type="hidden" name = "idGioco" value = "<%= gioco.getId()%>">
+		<input type="hidden" name="idGioco" value="<%=gioco.getId()%>">
 		<div>
 			<div>
 				<div class="col-md-4 mb-4" data-genere="<%=gioco.getGenere()%>"
@@ -129,12 +140,18 @@
 				</div>
 			</div>
 		</div>
-		<jsp:include page="footer.jsp" />
 		<script
 			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 	</form>
+
+	<div class="footer">
+
+		<%@ include file="footer.jsp"%>
+
+	</div>
+
 </body>
 </html>
 
