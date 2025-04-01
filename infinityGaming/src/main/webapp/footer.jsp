@@ -1,7 +1,8 @@
 <style type="text/css">
 	
 	.footer-block{
-	
+	   min-height:10vh; display:flex; flex-direction:column; 
+            justify-content:space-between;
 	}
 	
 </style>
