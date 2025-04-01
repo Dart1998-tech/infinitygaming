@@ -26,7 +26,7 @@
         %>
             <div class="alert alert-info text-center">
                 <p>Non hai ancora effettuato ordini.</p>
-                <a href="<%=request.getContextPath()%>/welcome-home.jsp" class="btn btn-primary mt-3">Inizia lo shopping</a>
+                <a href="<%=request.getContextPath()%>/home" class="btn btn-primary mt-3">Inizia lo shopping</a>
             </div>
         <% } else { %>
             <div class="table-responsive">
@@ -58,7 +58,7 @@
             </div>
             
             <div class="d-flex justify-content-center mt-4">
-                <a href="<%=request.getContextPath()%>/welcome-home.jsp" class="btn btn-secondary">Torna alla home</a>
+                <a href="<%=request.getContextPath()%>/home" class="btn btn-secondary">Torna alla home</a>
             </div>
         <% } %>
     </section>
