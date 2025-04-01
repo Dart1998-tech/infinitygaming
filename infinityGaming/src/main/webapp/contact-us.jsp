@@ -42,7 +42,7 @@
         <h2 class="card-title"><i class="fas fa-credit-card"></i> Pagamenti</h2>
         <p>Aiuto per problemi o domande relative ai pagamenti.</p>
 
-<a href="pagamenti.jsp" class="btn btn-primary">Scopri di più</a>
+<a class="btn btn-primary">Scopri di più</a>
 
       </div>
     </div>
@@ -53,7 +53,7 @@
         <h2 class="card-title">
         <i class="fas fa-user-shield"></i> Account e Sicurezza</h2>
         <p>Assistenza per la gestione dell'account e problemi di sicurezza.</p>
-        <a href="account.jsp" class="btn btn-primary">Scopri di più</a>
+        <a class="btn btn-primary">Scopri di più</a>
       </div>
     </div>
 
