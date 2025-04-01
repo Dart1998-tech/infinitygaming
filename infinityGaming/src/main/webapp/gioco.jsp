@@ -113,7 +113,7 @@
 								<strong>Anno di uscita:</strong>
 								<%=gioco.getAnno()%></p>
 							<p>
-								<strong>Recensione:</strong>
+								<strong>Descrizione:</strong>
 								<%=gioco.getRecensione()%></p>
 							<p>
 								<strong>Voto:</strong>
