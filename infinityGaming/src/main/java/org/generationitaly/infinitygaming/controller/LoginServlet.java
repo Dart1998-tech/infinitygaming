@@ -29,26 +29,23 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("method 'LoginServlet.doPost(request, response)' invoked!");
-		/*- <input id="input-username" name="username" type="text"> */
+		
 		String username = request.getParameter("username");
-		/*- <input id="input-password" name="password" type="password"> */
 		String password = request.getParameter("password");
+		
 		System.out.println("param 'username': " + username);
 		System.out.println("param 'password': " + password);
+		
 		Utente utente = utenteRepository.findByUsername(username);
+		
 		if (utente != null && utente.getPassword().equals(password)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("username", utente.getUsername());
 			session.setAttribute("utente", utente);
 			response.sendRedirect("home");
 		} else {
-
-			/*-
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");
-			requestDispatcher.forward(request, response);
-			*/
 			response.sendRedirect("login-error.jsp");
 		}
+		
 	}
-
 }

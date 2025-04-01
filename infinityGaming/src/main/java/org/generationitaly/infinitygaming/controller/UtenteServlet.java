@@ -20,6 +20,7 @@ public class UtenteServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		
 		HttpSession session = request.getSession();
 		Utente utente = (Utente)session.getAttribute("utente");
 		
@@ -27,9 +28,8 @@ public class UtenteServlet extends HttpServlet {
 			response.sendRedirect("login");
 			return;
 		}
-		//request.setAttribute("gioco", gioco);
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/profilo.jsp");
 		dispatcher.forward(request, response);
 	}
-
 }

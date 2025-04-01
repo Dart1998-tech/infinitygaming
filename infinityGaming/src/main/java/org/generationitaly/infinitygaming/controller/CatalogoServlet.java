@@ -30,31 +30,35 @@ public class CatalogoServlet extends HttpServlet {
 		List<Gioco> giochi = new ArrayList<>();
 
 		if (genere != null && !genere.isEmpty() && !genere.equals("tutti")) {
+			
 			giochi = giocoRepository.findByGenere(genere);
+			
 		} else if (piattaforma != null && !piattaforma.isEmpty()) {
+			
 			giochi = giocoRepository.findByPiattaforma(piattaforma);
 			request.setAttribute("giochi", giochi);
+			
 			switch (piattaforma) {
-			case "PC": {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/pc.jsp");
-				dispatcher.forward(request, response);
-				return;
-			}
-			case "PZ": {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/playstation.jsp");
-				dispatcher.forward(request, response);
-				return;
-			}
-			case "NOENTIENDO": {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/NoEntiendo.jsp");
-				dispatcher.forward(request, response);
-				return;
-			}
-			case "YBOX": {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/xboxN.jsp");
-				dispatcher.forward(request, response);
-				return;
-			}
+				case "PC": {
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/pc.jsp");
+					dispatcher.forward(request, response);
+					return;
+				}
+				case "PZ": {
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/playstation.jsp");
+					dispatcher.forward(request, response);
+					return;
+				}
+				case "NOENTIENDO": {
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/NoEntiendo.jsp");
+					dispatcher.forward(request, response);
+					return;
+				}
+				case "YBOX": {
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/xboxN.jsp");
+					dispatcher.forward(request, response);
+					return;
+				}
 			}
 		} else if (query != null && !query.isEmpty()) {
 			giochi = giocoRepository.findByTitoloLike(query);
@@ -65,6 +69,7 @@ public class CatalogoServlet extends HttpServlet {
 		} else {
 			giochi = giocoRepository.findAll();
 		}
+		
 		request.setAttribute("giochi", giochi);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/catalogo-giochi.jsp");
 		dispatcher.forward(request, response);

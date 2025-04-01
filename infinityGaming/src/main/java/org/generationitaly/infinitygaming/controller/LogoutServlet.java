@@ -10,14 +10,14 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/logout")
-
 public class LogoutServlet extends HttpServlet {
 	
 protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		throws ServletException, IOException {
+	
 		HttpSession session = request.getSession();
 		session.invalidate();
 		response.sendRedirect("/infinityGaming/login");
+		
 	}
-
 }

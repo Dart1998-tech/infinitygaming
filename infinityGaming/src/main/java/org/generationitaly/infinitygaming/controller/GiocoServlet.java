@@ -19,9 +19,12 @@ public class GiocoServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		
 		long id = Long.parseLong(request.getParameter("id"));
 		Gioco gioco = giocoRepository.findById(id);
+		
 		request.setAttribute("gioco", gioco);
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/gioco.jsp");
 		dispatcher.forward(request, response);
 	}

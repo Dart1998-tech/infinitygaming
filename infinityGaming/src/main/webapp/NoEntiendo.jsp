@@ -380,20 +380,17 @@
             });
         }
 
-        // Gestione dell'aggiunta al carrello
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.add-to-cart-btn').forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
                     const originalText = button.textContent;
                     
-                    // Cambia l'aspetto del bottone durante l'invio
                     button.textContent = 'Aggiungendo...';
                     button.disabled = true;
                     button.classList.remove('btn-success');
                     button.classList.add('btn-secondary');
                     
-                    // Simula l'aggiunta al carrello
                     setTimeout(() => {
                         button.textContent = 'Aggiunto!';
                         setTimeout(() => {

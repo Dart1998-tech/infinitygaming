@@ -241,23 +241,17 @@ none
             });
         }
 
-        // Gestione dell'aggiunta al carrello
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.add-to-cart-form').forEach(form => {
                 form.addEventListener('submit', function(e) {
                     const button = this.querySelector('.add-to-cart-btn');
                     const originalText = button.textContent;
                     
-                    // Cambia l'aspetto del bottone durante l'invio
                     button.textContent = 'Aggiungendo...';
                     button.disabled = true;
                     button.classList.remove('btn-success');
                     button.classList.add('btn-secondary');
                     
-                    // Invia il form normalmente
-                    // La risposta verrà gestita dal redirect della servlet
-                    
-                    // Ripristina il bottone dopo 3 secondi se non c'è risposta
                     setTimeout(() => {
                         if (button.textContent === 'Aggiungendo...') {
                             button.textContent = originalText;
@@ -348,7 +342,6 @@ none
 	filter: brightness(105%);
 }
 
-/* Stile per il bottone durante l'aggiunta al carrello */
 .add-to-cart-btn[disabled] {
 	opacity: 0.7;
 	cursor: not-allowed;
@@ -360,7 +353,6 @@ none
 		0 0 82px #f09, 0 0 92px #f09, 0 0 102px #f09, 0 0 151px #f09;
 }
 
-/* Additional styling */
 body {
 	font-size: 18px;
 	font-family: "Vibur", sans-serif;
